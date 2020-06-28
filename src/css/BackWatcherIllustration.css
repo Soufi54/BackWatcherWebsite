@@ -1,0 +1,302 @@
+body {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", Arial, sans-serif;
+    height: 100%;
+    margin:0;
+    padding:0;
+    width: 100%;
+
+
+
+
+}
+ul {
+  list-style-type: none;
+ }
+h1 {}
+
+h5 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+h5 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+h6 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+div {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.button {}
+
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+#TitleSection {
+    font-size: 1em;
+
+    text-align: center;
+    margin-bottom: 0px;
+    margin: auto;
+    background-color: #F5EEF3;
+    position: relative;
+        font-weight: bold;
+
+    margin:0;
+    padding:0;
+
+
+}
+
+
+
+
+.CenterImage{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  margin-bottom: 70px;
+
+} 
+
+
+
+
+#CenterColumn{
+
+    margin: auto;
+    text-align: center;
+
+
+}
+
+
+
+#InstallationProcedure{
+
+
+    font-size: 1.2em;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 70px;
+    color: #717171;
+}
+
+#Questions{
+
+
+    font-size: 1.2em;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 70px;
+    color: #717171;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#FirstDownloadSection {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+
+
+
+}
+
+
+#FirstDownloadButton {
+    max-width: 100%;
+    margin: auto;
+    font-size: 1.8em;
+    color: white;
+    background-color: #3ce04a;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px #aaa;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top:10px;
+    margin-bottom: 100px;
+}
+
+#IllustrationSection {
+
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin:0;
+    padding:0;
+    color: black;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+#IllustrationImage{
+    margin: auto;
+}
+
+#FirstImageSentence {
+    font-size: 7em;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 15px black;
+    max-width: 80%;
+}
+
+#SecondImageSentence {
+    font-size: 0.3em;
+    font-weight: bold;
+
+
+}
+
+
+
+#ValueSection {
+    font-size: 2.2em;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 70px;
+    color: #717171;
+
+}
+
+#ValueSection2 {
+    font-size: 2em;
+    width: 75%;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 30px;
+    color: #717171;
+
+}
+
+
+#ComparisonSection {
+
+    width: 60%; 
+   display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.ComparisonBoxes {
+
+
+    margin: 1px;
+    padding: 4px;
+
+    border: solid;
+    border-width: 2px;
+    border-color: #F5EEF3;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #aaa;
+    font-size: 1.5em;
+
+}
+
+
+
+
+
+
+
+#SecondDownloadSection {
+    margin: auto;
+}
+
+#SecondDownloadButton {
+    max-width: 100%;
+    margin: auto;
+    font-size: 1.8em;
+    color: white;
+    background-color: #3ce04a;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px #aaa;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top:100px;
+    margin-bottom: 100px;
+
+}
+
+
+
+
+
+
+
+
+
+
+#HowItWorksSection {
+    font-size: 1.5em;
+    width: 57%;
+    margin: auto;
+
+
+
+
+}
+
+
+#FootSection {
+    color: white;
+    background-color: black;
+    margin: auto;
+    width: 100%;
+
+}

@@ -1,0 +1,442 @@
+body {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", Arial, sans-serif;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1920px;
+
+
+
+
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {}
+
+h5 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+h5 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+h6 {
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+div {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.button {}
+
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+#TitleSection {
+    font-size: 1em;
+
+    text-align: center;
+    margin-bottom: 0px;
+    margin: auto;
+    background-color: #F5EEF3;
+    position: relative;
+    font-weight: bold;
+
+    margin: 0;
+    padding: 0;
+
+
+}
+
+#logoContainer {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+iframe{
+
+margin: auto;
+}
+
+
+#WinIcon{
+    position: absolute;
+
+    left: 50px;
+}
+
+
+
+
+#FirstDownloadSection {
+    margin: auto;
+    margin-bottom: 160px;
+
+
+}
+
+
+#FirstDownloadButton {
+    max-width: 100%;
+    margin: auto;
+    font-size: 1.8em;
+    color: white;
+    font-weight: bold;
+    background-color: #3ce04a;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px #aaa;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    margin-bottom: 45px;
+    padding-bottom: 20px;
+    margin-top: 100px;
+    
+}
+
+#IllustrationSection {
+
+    position: relative;
+    width: 100%;
+    color: white;
+    margin: 0;
+    padding: 0;
+    align-self: right;
+    color: black;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+#IllustrationImage {
+    margin: auto;
+}
+
+#FirstImageSentence {
+    font-size: 5.5em;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 15px black;
+    max-width: 80%;
+}
+
+#SecondImageSentence {
+    font-size: 0.3em;
+    font-weight: bold;
+
+
+}
+
+
+
+#ValueSection {
+    font-size: 2.2em;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 70px;
+    color: #717171;
+
+}
+
+
+#ValueSection3 {
+    font-size: 2.2em;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 0px;
+    color: #717171;
+
+}
+
+#ValueSection2 {
+    font-size: 1.4em;
+
+    width: 90%;
+    margin: auto;
+    margin-top: 180px;
+    margin-bottom: 180px;
+    color: black;
+    text-align: center;
+}
+#ValueSection4 {
+    font-size: 1.3em;
+
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    color: black;
+    text-align: center;
+}
+
+#ValueSection5 {
+    font-size: 1.3em;
+
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: black;
+    text-align: center;
+}
+
+
+#ValueSection6{
+    font-size: 1.3em;
+
+    width: 55%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+#ComparisonSection {
+
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.ComparisonBoxes {
+
+
+    margin: 5px;
+    padding: 4px;
+    min-width: 300px;
+    border: solid;
+    border-width: 2px;
+    border-color: #F5EEF3;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #aaa;
+    font-size: 1.5em;
+
+}
+
+
+
+
+
+
+#SecondDownloadSection {
+    margin: auto;
+}
+
+#SecondDownloadButton {
+    max-width: 100%;
+    margin: auto;
+    font-size: 1.8em;
+    color: white;
+    background-color: #3ce04a;
+    border-radius: 4px;
+    box-shadow: 2px 2px 3px #aaa;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+#ProdHealthSection{
+    font-size: 1em;
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.RowProd{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+
+}
+
+.ProdCase{
+
+    background-color: #f5f5f5;
+    width:300px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+
+
+}
+
+.titleCase{
+    font-size: 2.5em
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#HowItWorks {
+    font-size: 4em;
+    
+    color: white;
+    margin-bottom: 90px;
+
+}
+
+
+
+#DashboardSection {
+    background-color: #56b4e7;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#DashboardSectionShort {
+    font-size: 2em;
+    width: 57%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    color: white;
+     flex-wrap: wrap;
+     text-align: center;
+
+
+}
+
+
+#AdvicesSection {
+    background-color: #56b4e7;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+#AdvicesSectionShort {
+    font-size: 2em;
+    width: 57%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+
+
+
+}
+
+#StatsSection {
+    background-color: #56b4e7;
+    padding: 30px;
+}
+
+#StatsSectionShort {
+    font-size: 2em;
+    width: 57%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#FootSection {
+    color: white;
+    background-color: black;
+    margin: auto;
+    width: 100%;
+
+}
+
+
+
+
