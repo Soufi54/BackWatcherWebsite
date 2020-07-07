@@ -36,13 +36,13 @@ gtag('config', 'G-213PSMRGY5');
     <link href="src/css/pricing.css" rel="stylesheet">
 -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="BackWatcherWebsite.css">
+    <link rel="stylesheet" href="BackWatcherWebsite2.css">
     <title>BackWatcher</title>
 </head>
 
 <body>
 
-    <script src="https://www.paypal.com/sdk/js?client-id=AVTmZbstVsBt8agwviBjyV7bqiiVYOFdxI8UXFpk9P3_Fahn9WeEMFwSUwTHeO9J2GN7cDJo8GqkICCC"> </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AV92_QyWS9IBXZCMRdRqhGOhPvOKG8sLnhKpQlu6QzU8fxK-VWttxR8XZaPFsQ_2Dfe9G7Zo6LM0fQSr"> </script>
 
 
 
@@ -52,41 +52,55 @@ gtag('config', 'G-213PSMRGY5');
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <a class="my-0 mr-md-auto font-weight-normal" href="index2.html" style="color: black; font-size: 1.4em;"><img width="40px" style="margin: auto; vertical-align: -13px;" src="src/icon.png"> BackWatcher</a>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="https://backwatcher.ml/BackWatcherAboutUs.html">About us</a>
-        </nav>
-        <button type="button" class="btn btn-danger" href="https://forms.gle/CUdf9p6FKoi8ztoT7" target="blank">Buy</button>
+            <a class="p-2 text-dark" href="index2.html#pricing">Pricing</a>
+            <a class="p-2 text-dark" href="index2.html#AboutUs">About us</a>
+                </nav>
     </div>
     <br>
     <br>
 
-    <center> <h2>BackWatcher Pro checkout</h2></center>
+    <center> <h1 id="paymentH1" class="paymentH1">BackWatcher Pro $15 checkout</h1></center>
 
     <br>
     <br>
     <br>
-
-
-    <div class="container1" id="PaymentForm">
-        <form action="action_page.php">
-      
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name.." required>
-      
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email..">
+    <center>
+        <span style="color: red;" id="InformationSpan"></span>
+    </center>
     
-      
-          <input type="submit" value="Submit" id="PaymentFormButton">
-      
-        </form>
-      </div>
+    <div class="container1" id="container1">
 
-    <div id="paypal-button-container"></div>
+        <div id="paypal-button-container"></div>
+
+    </div>
 
       
 
 
-    <br>
+    <div id="SuccessfulPayment">
+
+        <h2>Successful Payment</h2>
+
+        <br>
+        <h6> <a target="_blank" href="https://www.microsoft.com/en-us/p/backwatcher/9nf8s4kh5v8v">Download the app</a> and go to the connection tab to connect with your email and password:</h6>
+        <br>
+        Your email: <span style="font-weight: bold;" id="email"></span>   <br>
+        Your password: <span style="font-weight: bold;" id="password"></span> <br><br>
+
+        <br><br>
+        Thank you for your support!
+
+    </div>
+
+
+    <br><br><br>
+
+    <center>
+    <span>Send us an email at <a href="mailto:backwatcherdev@gmail.com"> backwatcherdev@gmail.com</a> in case of any issue</span>
+</center>
+
+    <br><br><br>
+
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <div class="container">
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
@@ -123,7 +137,7 @@ gtag('config', 'G-213PSMRGY5');
 
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-functions.js"></script>
-    <script src="payment.js" type="text/javascript"></script>
+    <script src="js/payment.js" type="text/javascript"></script>
 </body>
 
 

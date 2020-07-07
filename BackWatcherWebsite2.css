@@ -1,0 +1,478 @@
+
+body{
+
+	font-family: 'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+
+	padding: 2px;
+	background-color: white; 
+}
+
+#AnimatedIllustration{
+	width: 70%;
+
+
+}
+
+a:hover{
+	text-decoration: none;
+	color: grey;
+}
+
+.div{
+	margin: auto;
+}
+
+h1{
+
+	font-size: 5rem;
+	font-weight: bold;
+
+}
+
+.banner{
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding: 3px;
+}
+
+.BannerText{
+	padding-left: 50px;
+	width: 65%;
+}
+
+
+
+#GridLandingContainer{
+	display: grid;
+	grid-template-columns: auto auto;
+	padding: 10px;
+	justify-content: space-around;
+	grid-row-gap: 10px;
+
+
+}
+
+
+.btn-success{
+
+	font-size: 3em;
+	min-width: 6em;
+	max-height: 90px;
+}
+
+#BUY{
+	font-size: 3em;
+	min-width: 5em;
+	background-color: white ;
+	color: red;
+	border-color: red ;
+	max-height: 90px;
+}
+
+
+
+.ValueProposition{
+
+	color: grey;
+
+}
+
+
+.card-line{
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+
+
+
+.card{
+	margin: auto;
+	text-align: center;
+	border: 0;
+}
+
+.card-title{
+	font-size: 2.5rem;
+}
+
+.bi-bi-cloud-slash{
+
+	display: block;
+	margin: auto;
+
+}
+.logolock{
+
+	display: block;
+	margin: auto;
+
+}
+.bi-bi-battery{
+
+	display: block;
+	margin: auto;
+
+}
+
+
+#PricingCard{
+	width: 25em;
+}
+
+
+
+
+
+
+
+
+
+
+
+.GridFeaturesContainer{
+display: grid;
+margin-right: 50px;
+margin-left: 50px;
+grid-template-columns: auto auto;
+	padding: 80px;
+	justify-content: space-around;
+	grid-row-gap: 400px;
+
+
+
+}
+
+
+
+.BeforeAfter{
+	margin: auto;
+
+}
+
+
+.Why{
+	width: 40%;
+	margin: 15px;
+
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+
+}
+
+.WhyTitle{	
+	font-size: 3.5em;
+}
+
+.BeforeAfterimg{
+	margin: auto;
+	width: 40vw;
+}
+
+
+
+
+.Why2{
+	width: 40%;
+	margin: 15px;
+
+	display: flex;
+  	justify-content: center;
+  	flex-direction: column;
+
+}
+
+.WhyTitle2{	
+	font-size: 3em;
+}
+
+.BeforeAfterimg2{
+	margin: auto;
+	width: 40vw;
+
+
+}
+
+
+
+
+.descriptionFeature{
+	font-size: 1.5em;
+	color: grey;
+	max-width: 200px;
+}
+
+
+
+
+
+.AboutUs{
+
+	max-width: 800px; 
+	margin: auto;
+	text-align: center;
+
+}
+
+.AboutUsText{
+	font-size: 1.1em;
+  	text-justify: inter-word;
+	text-align: justify;
+}
+
+@media screen and (max-width: 400px){
+
+	*{font-size: 0.8em;}
+}
+
+
+
+
+#Pricing{
+	margin: auto;
+	max-width: 1000px;
+	margin-top: 0em;
+	
+
+	display: flex;
+  	justify-content: space-around;
+  	flex-direction: column;
+	  border: 1px;
+	
+}
+
+
+#pricing{
+	text-align: center;
+	margin-bottom: 0.4em !important;
+	padding-bottom: 0px !important;
+	
+
+}
+
+#Pricing span{
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-size: 1.5em;
+
+}
+#Pricing h1{
+	margin: auto;
+}
+
+.ButtonDiv{
+	margin: auto;
+}
+
+
+.PriceFeature{
+
+	text-align: center;
+	min-width: 5em;
+}
+
+
+#Try2{
+
+	font-size: 3em;
+	min-width: 5em;
+	margin-right: 0px;
+	margin-bottom: 0.5em;
+
+}
+
+
+
+#BUY2{
+	font-size: 2em;
+	background-color: red;
+	margin: auto;
+	min-width: 11em;
+	max-width: 20em;
+	max-height: 90px;
+}
+
+
+.PricingLine{
+	margin: auto;
+	text-align: center;
+	
+}
+.PricingLine a{
+	color: blue;
+	margin-bottom: 10px;
+	text-decoration: none;
+}
+.PricingLine a:hover{
+	
+	text-decoration: underline;
+}
+
+
+
+
+.PricingFeatures{
+	text-align: center;
+	color:  #808080	;
+	line-height: 2;
+}
+
+
+
+
+
+
+@media (max-width:400px) { 
+
+	body{
+		font-size: 1.6em;
+		padding: 8px;
+	}
+	
+
+	.banner{
+
+		flex-wrap: wrap;
+
+	}
+
+	.BannerText{
+		padding-left: 5px; 
+		width: 98%;
+
+	}
+
+	#GridLandingContainer{
+		display: grid;
+		grid-template-columns: auto;
+		padding: 5px;
+		justify-content: space-around;
+		grid-row-gap: 10px;
+		margin-right: 0px;
+
+	}
+
+	#MicrosoftCertified{
+		grid-row-start: 2;
+  		grid-row-end: 3;
+	}
+
+	#PaypalCertified{
+		grid-row-start: 2;
+  		grid-row-end: 2;
+	}
+
+
+	.GridFeaturesContainer{
+		
+		grid-template-columns: auto;
+		padding: 5px;
+		justify-content: space-around;
+		grid-row-gap: 100px;
+	
+	
+	
+	}
+
+	.BeforeAfterimg2{
+		width: 80vw;
+	}
+	.BeforeAfterimg{
+		width: 80vw;
+	}
+	.text-dark{
+		display: none;
+	}
+	#BUYnav{
+		display: none;
+	}
+	#BUY{
+		margin-left: 4px;
+	}
+	.card-text{
+		font-size: 1.8em;
+		margin-bottom: 40px;
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+	width: 100%; /* Full width */
+	padding: 12px; /* Some padding */ 
+	border: 1px solid #ccc; /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=email], select, textarea {
+	width: 100%; /* Full width */
+	padding: 12px; /* Some padding */ 
+	border: 1px solid #ccc; /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+	background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container1{
+	border-radius: 5px;
+	background-color: white;
+	padding: 20px;
+	max-width: 500px;
+	margin: auto;
+  }
+
+
+.paymentH1{
+	font-size: 2.2em;
+}
+
+  #SuccessfulPayment{
+	  display: none;
+	  margin: auto;
+	  text-align: center;
+  }
