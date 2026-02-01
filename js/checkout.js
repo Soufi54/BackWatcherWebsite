@@ -1,7 +1,7 @@
 // Stripe Checkout Integration
 // Replace these with your actual values
-const SUPABASE_URL = 'YOUR_SUPABASE_URL'; // e.g., https://xxxxx.supabase.co
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://srdtobhozcsupwyfxvxv.supabase.co'; // e.g., https://xxxxx.supabase.co
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyZHRvYmhvemNzdXB3eWZ4dnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzMTU1NDEsImV4cCI6MjA4NDg5MTU0MX0.xH48IkxcRqvLEvqBvIY4PmuxIoeF2lsc0C6Tsnj7HbM';
 const SUPABASE_FUNCTION_URL = `${SUPABASE_URL}/functions/v1/create-checkout-session`;
 
 function validateEmail(email) {
@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (urlParams.get('canceled') === 'true') {
         errorMessage.textContent = 'Payment was canceled. You can try again when ready.';
         errorMessage.style.color = 'orange';
+    }
+
+    // Pre-fill email from localStorage (if user came from download flow)
+    const savedEmail = localStorage.getItem('backwatcher_email');
+    if (savedEmail && checkoutEmail && !checkoutEmail.value) {
+        checkoutEmail.value = savedEmail;
     }
 
     if (checkoutButton) {

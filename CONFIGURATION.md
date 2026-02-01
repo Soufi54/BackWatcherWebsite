@@ -1,13 +1,29 @@
 # Configuration Guide
 
+## ⚠️ CRITICAL: Before Going Live
+
+### Security Checklist
+- [ ] **Supabase RLS enabled** - Run the SQL setup script which includes Row Level Security
+- [ ] **Verify RLS policies** - Check Supabase Table Editor → each table → Policies tab
+- [ ] **Stripe webhook secret** - Ensure `STRIPE_WEBHOOK_SECRET` is set in Supabase secrets
+- [ ] **Test in Stripe test mode first** - Never go live without testing!
+
+---
+
 ## Files to Update Before Going Live
 
 ### 1. `js/download.js`
-Update the download URL:
+The download URL is configured to:
 ```javascript
-const DOWNLOAD_URL = "https://github.com/YOUR_USERNAME/BackWatcher/releases/latest/download/BackWatcher.dmg";
+const DOWNLOAD_URL = "https://github.com/Soufi54/BW/releases/latest/download/BackWatcher.dmg";
 ```
-Replace `YOUR_USERNAME` with your GitHub username and update the filename if different.
+Update if your release filename is different.
+
+**Also update Supabase credentials** (should match checkout.js):
+```javascript
+const SUPABASE_URL = 'https://xxxxx.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJ...';
+```
 
 ### 2. `js/checkout.js`
 Update these values with your Supabase credentials:
@@ -35,11 +51,19 @@ Replace with your verified Resend domain email, or keep `onboarding@resend.dev` 
 
 ## Quick Checklist
 
-- [ ] Updated `DOWNLOAD_URL` in `js/download.js`
-- [ ] Updated `SUPABASE_URL` in `js/checkout.js`
-- [ ] Updated `SUPABASE_ANON_KEY` in `js/checkout.js`
+### Configuration
+- [x] Updated `DOWNLOAD_URL` in `js/download.js`
+- [ ] Updated `SUPABASE_URL` in `js/download.js` and `js/checkout.js`
+- [ ] Updated `SUPABASE_ANON_KEY` in `js/download.js` and `js/checkout.js`
 - [ ] Verified Stripe price is $99
-- [ ] Tested download flow (email validation)
+
+### Security
+- [ ] Ran `supabase_setup.sql` (includes RLS policies)
+- [ ] Verified RLS is enabled on all 4 tables
+- [ ] Set `STRIPE_WEBHOOK_SECRET` in Supabase secrets
+
+### Testing
+- [ ] Tested download flow (email saved to download_leads table)
 - [ ] Tested checkout flow (Stripe integration)
 - [ ] Tested payment with test card: `4242 4242 4242 4242`
 - [ ] Verified license key email is received
@@ -55,14 +79,15 @@ Replace with your verified Resend domain email, or keep `onboarding@resend.dev` 
 
 ### Test Flow
 1. Go to homepage
-2. Enter email → Click "Download for macOS"
+2. Enter email → Click "Download Free Trial for macOS"
 3. Download link appears
-4. Click "Buy Lifetime License" → Scrolls to pricing
-5. Click "BUY NOW FOR $99" → Goes to checkout
-6. Enter email → Click "Proceed to Payment"
-7. Complete test payment
-8. Check email for license key
-9. Verify license key format: `BW-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`
+4. **Verify**: Check Supabase → Table Editor → download_leads (email should appear)
+5. Go to checkout page
+6. **Verify**: Email should be pre-filled from step 2
+7. Click "Proceed to Payment"
+8. Complete test payment with test card
+9. Check email for license key
+10. Verify license key format: `BW-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`
 
 ---
 
@@ -74,10 +99,10 @@ Replace with your verified Resend domain email, or keep `onboarding@resend.dev` 
 3. Select branch and folder (usually `main` / `root`)
 4. Your site will be live at: `https://YOUR_USERNAME.github.io/REPO_NAME/`
 
-### Custom Domain (Optional)
+### Custom Domain (backwatcher.app)
 1. Add `CNAME` file with your domain name
 2. Update DNS records as instructed by GitHub Pages
-3. Update webhook URL in Stripe with your custom domain
+3. **Update webhook URL in Stripe** with your custom domain
 
 ---
 
@@ -86,5 +111,6 @@ Replace with your verified Resend domain email, or keep `onboarding@resend.dev` 
 If you encounter issues:
 - Check browser console for errors
 - Verify all configuration values are correct
+- Check Supabase logs for Edge Function errors
 - Test with Stripe test mode first
-- Contact: backwatcherdev@gmail.com
+- Contact: contact@backwatcher.app

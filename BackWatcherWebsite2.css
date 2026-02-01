@@ -1,4 +1,9 @@
 
+html, body{
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
 body{
 
 	font-family: 'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -8,9 +13,9 @@ body{
 }
 
 #AnimatedIllustration{
-	width: 70%;
-
-
+	width: 45%;
+	flex-shrink: 1;
+	min-width: 0;
 }
 
 a:hover{
@@ -33,27 +38,30 @@ h1{
 
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 	padding-right: 2px;
 	padding-left: 2px;
 	padding: 3px;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .BannerText{
 	padding-left: 50px;
-	width: 65%;
+	width: 50%;
+	flex-shrink: 1;
+	min-width: 0;
 }
 
 
 
 #GridLandingContainer{
-	display: grid;
-	grid-template-columns: auto auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 10px;
-	justify-content: space-around;
-	grid-row-gap: 10px;
-
-
+	gap: 15px;
+	max-width: 450px;
 }
 
 
@@ -352,23 +360,13 @@ grid-template-columns: auto auto;
 	}
 
 	#GridLandingContainer{
-		display: grid;
-		grid-template-columns: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		padding: 5px;
-		justify-content: space-around;
-		grid-row-gap: 10px;
+		gap: 10px;
 		margin-right: 0px;
-
-	}
-
-	#MicrosoftCertified{
-		grid-row-start: 2;
-  		grid-row-end: 3;
-	}
-
-	#PaypalCertified{
-		grid-row-start: 2;
-  		grid-row-end: 2;
+		max-width: 100%;
 	}
 
 

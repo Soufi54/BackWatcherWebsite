@@ -67,24 +67,26 @@ gtag('config', 'G-213PSMRGY5');
             </span>
             <br>
         
-            <div id="GridLandingContainer">
+            <div id="GridLandingContainer" style="display: flex; flex-direction: column; align-items: center; gap: 15px; max-width: 450px;">
                 <!-- Email collection form for download -->
-                <div id="downloadSection" style="width: 100%; max-width: 400px; margin: 0 auto;">
+                <div id="downloadSection" style="width: 100%; max-width: 400px;">
                     <input type="email" id="downloadEmail" placeholder="Enter your email" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;" />
                     <div id="emailError" style="color: red; font-size: 14px; margin-bottom: 10px; display: none;"></div>
-                    <button class="btn btn-success" id="downloadBtn" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download for macOS</button>
+                    <button class="btn btn-success" id="downloadBtn" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Free Trial for macOS</button>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
                         <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
                     </div>
                 </div>
                 
-                <div style="width: 100%; text-align: center; margin-top: 20px;">
-                    <button class="btn btn-danger" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})" id="buyLifetimeBtn" style="padding: 12px 30px; font-size: 16px; font-weight: bold;">Buy Lifetime License</button>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 5px;">
+                    <span style="color: #666; font-size: 0.9em;">🔒 Apple-notarized macOS dmg app</span>
+                    <span style="color: #666; font-size: 0.9em;">💳 Payments secured by Stripe</span>
                 </div>
                 
-                <span id="MicrosoftCertified" style="text-align: center; color: grey; font-size: 1em;color: #cccccc;" > Certified by Microsoft <img width="20px" style="margin: auto; vertical-align: -5px;" src="src/logoMicrosoft.svg.png"> </span>
-                <span id="StripeCertified" style="text-align: center; color: grey; font-size: 1em;color: #cccccc;" > Secured by Stripe  <img width="20px" style="margin: auto; vertical-align: -5px;" src="src/Paypal.png"> </span>
+                <div style="margin-top: 10px;">
+                    <a href="https://www.linkedin.com/in/chakerm/" target="_blank" style="color: #0077b5; font-size: 14px; text-decoration: none; font-weight: 500;">Talk to the founder on LinkedIn →</a>
+                </div>
 
             </div>
             <br>
@@ -106,7 +108,7 @@ gtag('config', 'G-213PSMRGY5');
             </svg>
             <div class="card-body">
                 <h5 class="card-title">OFFLINE</h5>
-                <p class="card-text">BackWatcher only processes your webcam images on your PC</p>
+                <p class="card-text">Camera processing happens locally on your Mac. Nothing is uploaded.</p>
             </div>
         </div>
         <div data-aos="slide-up" class="card" style="width: 21rem;">
@@ -115,7 +117,7 @@ gtag('config', 'G-213PSMRGY5');
             </svg>
             <div class="card-body">
                 <h5 class="card-title">SECURED</h5>
-                <p class="card-text">The BackWatcher App is certified by Microsoft at each update</p>
+                <p class="card-text">The BackWatcher App is notarized by Apple and the Microsoft version is certified by Microsoft at each update</p>
             </div>
         </div>
         <div data-aos="slide-up" class="card" style="width: 21rem;">
@@ -132,7 +134,20 @@ gtag('config', 'G-213PSMRGY5');
     </div>
     <br>
     <br>
-    <br><br>
+    <br>
+    
+    <div id="privacy" class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center;">
+        <h2 style="font-size: 2.5em; font-weight: bold; margin-bottom: 30px;">Privacy & Camera</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.1em; line-height: 2; color: #333;">
+            <li>✓ Uses the camera to estimate posture in real time</li>
+            <li>✓ Processing is local on your Mac (offline)</li>
+            <li>✓ No video is stored</li>
+            <li>✓ No video is sent to a server</li>
+            <li>✓ You can pause monitoring anytime</li>
+        </ul>
+        <a href="privacy-policy.html" style="color: #007bff; font-size: 1em; margin-top: 20px; display: inline-block;">Read our full Privacy Policy →</a>
+    </div>
+
     <br>
     <br><br>
     <br>
@@ -166,7 +181,7 @@ gtag('config', 'G-213PSMRGY5');
                 </h2>
                 <span class="descriptionFeature">
                     Your privacy is priceless. <br>We only depend on our users for our revenue. The app works offline and all webcam images are processed on your PC, BackWatcher is secured and certified for each update by Microsoft.
-                    <a target="blank" href="https://backwatcher.ml/BackWatcher_Privacy_terms.pdf">Read the privacy policy</a>
+                    <a href="privacy-policy.html">Read the privacy policy</a>
                 </span>
                 <br>
         </div>    
@@ -209,7 +224,7 @@ gtag('config', 'G-213PSMRGY5');
             <span>Pay once for a <strong>lifetime change</strong> </span>   <br>     
             <span> <strong>Unlimited</strong> posture tracking</span>   <br>
             <span> Pause reminder</span><br>
-            <span> <strong>24-hour free trial</strong> included</span><br>    
+            <span> <strong>7-day free trial</strong> included</span><br>    
             <a href="index.html#downloadSection">Download free trial</a>        
         </div>
 
@@ -235,13 +250,13 @@ gtag('config', 'G-213PSMRGY5');
         <br>
         <br>
         <span class="AboutUsText">
-            My name is Chaker. I am the founder of BackWatcher and I live in France. I am a student in the French Engineering school Mines Nancy.
+            My name is Chaker. I am the founder of BackWatcher and a data analytics engineer in Paris.
             <br>
             <br>
             As I spend so many hours on my PC I noticed that I have developed a hunchback posture. I didn't find a satisfying solution so I decided to use my useless webcam to remind me to stop slouching. Instead of using a small personal executable, I thought that many people could be in the same situation. So I decided to develop a distributable and secured app for everyone.
             <br>
             <br>
-            As using a webcam for an app is sensitive I chose to partner with Microsoft to make the app secured. Thanks to your support I can pursue the development of BackWatcher, I plan to build a macOS and Mobile BackWatcher app versions.
+            As using a webcam for an app is sensitive. I made the app works locally on your Mac. I also expect to make it certified to increase confidence in the code of the app I coded. Stay tuned for the next updates.
             <br>
             <br>
             Follow me on <a target="blank" href="https://reddit.com/u/BackWatcherDev">Reddit</a> to get the latest news about good posture and BackWatcher development.
@@ -258,31 +273,29 @@ gtag('config', 'G-213PSMRGY5');
                 <div class="col-12 col-md">
                     <img src="src/icon.png" width="30" height="30"> BackWatcher
                     <small style="margin-bottom: 1px !important" class="d-block mb-3 text-muted">193 rue du Maréchal Oudinot,<br> Nancy, France </small>
-                    <small class="d-block mb-3 text-muted"> All rights reserved <br> © 2019-2020</small>
+                    <small class="d-block mb-3 text-muted"> All rights reserved <br> © 2019-2026</small>
                 </div>
                 <div class="col-6 col-md">
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="BackWatcherAboutUs.html">About us</a></li>
-                        <li><a class="text-muted" href="mailto:backwatcherdev@gmail.com"></a> contact: backwatcherdev@gmail.com</a></li>
+                        <li><a class="text-muted" href="index.html#AboutUs">About us</a></li>
+                        <li><a class="text-muted" href="mailto:contact@backwatcher.app">contact: contact@backwatcher.app</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="index2.html#pricing">Pricing</a></li>
-                        <li><a class="text-muted" href="https://forms.gle/CUdf9p6FKoi8ztoT7" target="blank">Buy</a></li>
+                        <li><a class="text-muted" href="index.html#pricing">Pricing</a></li>
+                        <li><a class="text-muted" href="checkout.html">Buy</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="index2.html#pricing">Terms of service</a></li>
-                        <li><a class="text-muted" href="https://forms.gle/CUdf9p6FKoi8ztoT7" target="blank">Privacy policy</a></li>
+                        <li><a class="text-muted" href="terms-of-service.html">Terms of service</a></li>
+                        <li><a class="text-muted" href="privacy-policy.html">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div style="text-align: center;"> Made with <span style="color: #e25555;">&#9829;</span> in France</div>
+            <div style="text-align: center;"> Made with <span style="color: #e25555;">&#9829;</span> from  France</div>
         </footer>
-    </div>
-    </div>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

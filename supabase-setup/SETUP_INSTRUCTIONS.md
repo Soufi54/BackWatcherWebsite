@@ -24,7 +24,7 @@ After project is created, note these credentials:
 
 **Save these - you'll need them for the website!**
 
-## Step 3: Create Database Tables
+## Step 3: Create Database Tables & Security Policies
 
 1. Go to: **SQL Editor** (left sidebar)
 2. Click: **New Query**
@@ -35,7 +35,12 @@ After project is created, note these credentials:
 
 **Verify tables were created:**
 - Go to: **Table Editor** (left sidebar)
-- You should see 3 tables: `users`, `licenses`, `payments`
+- You should see 4 tables: `users`, `licenses`, `payments`, `download_leads`
+
+**⚠️ CRITICAL: Verify RLS is enabled:**
+- Click on each table → **Policies** tab
+- You should see "Row Level Security enabled" with policies listed
+- If RLS is not enabled, your data is NOT protected!
 
 ## Step 4: Add Edge Function Secrets
 
@@ -58,8 +63,18 @@ After project is created, note these credentials:
 ✅ Project created  
 ✅ Project URL copied  
 ✅ Anon Key copied  
-✅ Tables created (users, licenses, payments)  
+✅ Tables created (users, licenses, payments, download_leads)  
+✅ **RLS enabled on ALL tables** (critical for security!)  
 ✅ Secrets added (STRIPE_SECRET_KEY, STRIPE_PRICE_ID, RESEND_API_KEY)
+
+## Security Notes
+
+The SQL setup includes Row Level Security (RLS) policies that:
+- **Protect** users, licenses, and payments tables from public access
+- **Allow** anonymous inserts to download_leads (for email collection)
+- **Ensure** only Edge Functions (using service_role) can access sensitive data
+
+**Never disable RLS** - it's the primary security layer protecting your data!
 
 ## Next Steps
 
