@@ -79,12 +79,27 @@ document.addEventListener('DOMContentLoaded', function() {
             // Store email locally for pre-filling checkout
             localStorage.setItem('backwatcher_email', email);
 
-            // Track download event (without PII for privacy compliance)
+            // Track email entry event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'download_initiated', {
+                gtag('event', 'email_entry', {
                     'event_category': 'engagement',
-                    'event_label': 'macos_trial'
-                    // Note: Email removed for GDPR compliance
+                    'event_label': 'download_form'
+                });
+            }
+        });
+    }
+
+    // Track actual download link click (GitHub release)
+    if (downloadLink) {
+        downloadLink.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'macos_dmg'
+                });
+                gtag('event', 'github_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'release_download'
                 });
             }
         });

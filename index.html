@@ -41,7 +41,7 @@ gtag('config', 'G-L5YPR2LR29');
             <a class="p-2 text-dark" href="index.html#pricing">Pricing</a>
             <a class="p-2 text-dark" href="index.html#AboutUs">About us</a>
         </nav>
-        <button style="background-color: white; color: red;" type="button" class="btn btn-danger" id="BUYnav" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Buy</button>
+        <button style="background-color: white; color: red;" type="button" class="btn btn-danger" id="BUYnav" onclick="gtag('event', 'buy_click', {'event_category': 'engagement', 'event_label': 'nav_button'}); document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Buy</button>
     </div>
     <div class="banner" data-aos="fade-up">
         <div class="BannerText">
@@ -135,7 +135,7 @@ gtag('config', 'G-L5YPR2LR29');
             <li>✓ No video is sent to a server</li>
             <li>✓ You can pause monitoring anytime</li>
         </ul>
-        <a href="privacy-policy.html" style="color: #007bff; font-size: 1em; margin-top: 20px; display: inline-block;">Read our full Privacy Policy →</a>
+        <a href="privacy-policy.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'privacy_section'})" style="color: #007bff; font-size: 1em; margin-top: 20px; display: inline-block;">Read our full Privacy Policy →</a>
     </div>
 
     <br>
@@ -171,7 +171,7 @@ gtag('config', 'G-L5YPR2LR29');
                 </h2>
                 <span class="descriptionFeature">
                     Your privacy is priceless. <br>We only depend on our users for our revenue. The app works offline and all webcam images are processed on your PC, BackWatcher is secured and certified for each update by Microsoft.
-                    <a href="privacy-policy.html">Read the privacy policy</a>
+                    <a href="privacy-policy.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Read the privacy policy</a>
                 </span>
                 <br>
         </div>    
@@ -206,7 +206,7 @@ gtag('config', 'G-L5YPR2LR29');
 
         
 
-            <button class="btn btn-danger" onclick="location.href='checkout.html'" id="BUY2">BUY NOW FOR $99</button>                
+            <button class="btn btn-danger" onclick="gtag('event', 'buy_click', {'event_category': 'engagement', 'event_label': 'main_cta'}); location.href='checkout.html'" id="BUY2">BUY NOW FOR $99</button>                
             
         <br>
         <br>
@@ -280,7 +280,7 @@ gtag('config', 'G-L5YPR2LR29');
                 <div class="col-6 col-md">
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="terms-of-service.html">Terms of service</a></li>
-                        <li><a class="text-muted" href="privacy-policy.html">Privacy policy</a></li>
+                        <li><a class="text-muted" href="privacy-policy.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'footer'})">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>

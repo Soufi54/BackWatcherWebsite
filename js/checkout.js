@@ -70,6 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
 
                 if (data.success && data.url) {
+                    // Track checkout initiation
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'checkout_initiated', {
+                            'event_category': 'conversion',
+                            'event_label': 'stripe_redirect'
+                        });
+                    }
                     // Redirect to Stripe Checkout
                     window.location.href = data.url;
                 } else {
