@@ -15,7 +15,7 @@
 ### 1. `js/download.js`
 The download URL is configured to:
 ```javascript
-const DOWNLOAD_URL = "https://github.com/Soufi54/BW/releases/latest/download/BackWatcher.dmg";
+const DOWNLOAD_URL = "https://github.com/Soufi54/BW/releases";
 ```
 Update if your release filename is different.
 
