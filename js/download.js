@@ -5,7 +5,7 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-const DOWNLOAD_URL = "https://github.com/Soufi54/BW/releases";
+const DOWNLOAD_URL = "https://github.com/Soufi54/BackWatcherWebsite/releases/download/v1.2.3/BackWatcher-1.2.3-arm64.dmg";
 
 // Supabase configuration for storing download leads
 // Uses the same Supabase instance as checkout.js

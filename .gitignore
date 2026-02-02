@@ -28,3 +28,7 @@ node_modules/
 # Build output
 dist/
 build/
+
+# Release files (uploaded to GitHub Releases, not to repo)
+release/*
+!release/readme.md
