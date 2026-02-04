@@ -73,9 +73,7 @@ CREATE POLICY "Service role only" ON licenses
 
 -- Policy: Payments table - Only service role can read/write
 CREATE POLICY "Service role only" ON payments
-  FOR ALL USING (auth.role() = 'service_role');
-
--- Policy: Download leads - Allow insert from anon (for email collection), but no read
+  FOR ALL USING (auth.role() = 'service_role');-- Policy: Download leads - Allow insert from anon (for email collection), but no read
 CREATE POLICY "Allow anonymous insert" ON download_leads
   FOR INSERT WITH CHECK (true);
 
