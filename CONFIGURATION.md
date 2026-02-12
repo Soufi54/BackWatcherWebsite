@@ -40,12 +40,13 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 ### 3. Verify Stripe Price ID
 Make sure your Stripe product price is set to **$99** and the `STRIPE_PRICE_ID` secret in Supabase matches.
 
-### 4. Update Email "From" Address (Optional)
-In your Supabase `stripe-webhook` Edge Function, update:
-```typescript
-from: "BackWatcher <onboarding@resend.dev>"
-```
-Replace with your verified Resend domain email, or keep `onboarding@resend.dev` for testing.
+### 4. Edge Functions (create-checkout-session + stripe-webhook)
+This repo includes fixed Edge Functions under `supabase/functions/`. **Deploy and env setup:** see **[supabase/FUNCTIONS_DEPLOY.md](supabase/FUNCTIONS_DEPLOY.md)**.
+- Deploy webhook with: `supabase functions deploy stripe-webhook --no-verify-jwt`
+- Set secrets: `STRIPE_SECRET_KEY`, `STRIPE_PRICE_ID`, `STRIPE_WEBHOOK_SECRET`, `SITE_URL`, `RESEND_API_KEY` (and optional `RESEND_FROM_EMAIL`).
+
+### 5. Update Email "From" Address (Optional)
+Set the `RESEND_FROM_EMAIL` secret (e.g. `BackWatcher <noreply@yourdomain.com>`) or leave unset to use `contact@backwatcher.app`.
 
 ---
 

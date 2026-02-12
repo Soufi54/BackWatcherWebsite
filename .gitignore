@@ -32,3 +32,8 @@ build/
 # Release files (uploaded to GitHub Releases, not to repo)
 release/*
 !release/readme.md
+
+
+# Supabase files
+supabase/
+supabase-setup/
