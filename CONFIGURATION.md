@@ -48,6 +48,21 @@ This repo includes fixed Edge Functions under `supabase/functions/`. **Deploy an
 ### 5. Update Email "From" Address (Optional)
 Set the `RESEND_FROM_EMAIL` secret (e.g. `BackWatcher <noreply@yourdomain.com>`) or leave unset to use `contact@backwatcher.app`.
 
+### 6. Reddit Pixel (installations / conversions)
+To track installations and conversions for Reddit Ads:
+
+1. Get your **Pixel ID** from [Reddit Ads Manager](https://ads.reddit.com) → **Tools** → **Conversion** → **Reddit Pixel** → copy your pixel ID.
+2. Replace `REPLACE_WITH_YOUR_REDDIT_PIXEL_ID` in these files with your actual Pixel ID:
+   - `index.html`
+   - `success.html`
+   - `checkout.html`
+
+**Events fired:**
+- **PageVisit** – on homepage load
+- **ViewContent** – on checkout page
+- **Lead** – when user clicks “Download Now” (app install intent)
+- **Purchase** – on success page after payment (license / conversion)
+
 ---
 
 ## Quick Checklist
@@ -57,6 +72,7 @@ Set the `RESEND_FROM_EMAIL` secret (e.g. `BackWatcher <noreply@yourdomain.com>`)
 - [ ] Updated `SUPABASE_URL` in `js/download.js` and `js/checkout.js`
 - [ ] Updated `SUPABASE_ANON_KEY` in `js/download.js` and `js/checkout.js`
 - [ ] Verified Stripe price is $99
+- [ ] Replaced `REPLACE_WITH_YOUR_REDDIT_PIXEL_ID` in `index.html`, `success.html`, `checkout.html` with your Reddit Pixel ID
 
 ### Security
 - [ ] Ran `supabase_setup.sql` (includes RLS policies)

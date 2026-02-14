@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     'event_label': 'release_download'
                 });
             }
+            // Reddit Pixel - track installation (app download)
+            if (typeof rdt !== 'undefined') {
+                rdt('track', 'Lead');
+            }
         });
     }
 
