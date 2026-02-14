@@ -53,6 +53,10 @@ h1{
 	min-width: 0;
 }
 
+.BannerText h1{
+	font-size: 5rem;
+}
+
 
 
 #GridLandingContainer{

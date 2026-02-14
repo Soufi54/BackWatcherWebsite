@@ -47,25 +47,31 @@ gtag('config', 'G-L5YPR2LR29');
         <div class="BannerText">
             <br><br>
             <span>
-                <h1>The way to good posture</h1>
+                <h1>Catch yourself slouching in real time.</h1>
             </span>
             <br>
             <br>
             <br>
             <span class="ValueProposition">
-                <h2> Use your computer without threatening your <br>health with BackWatcher webcam tracking</h2>
+                <h2>BackWatcher gently alerts you when your posture starts slipping — while you work.</h2>
             </span>
             <br>
         
             <div id="GridLandingContainer" style="display: flex; flex-direction: column; align-items: center; gap: 15px; max-width: 450px;">
-                <!-- Email collection form for download -->
+                <!-- Download CTA - no email required -->
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
-                    <input type="email" id="downloadEmail" placeholder="Enter your email" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;" />
-                    <div id="emailError" style="color: red; font-size: 14px; margin-bottom: 10px; display: none;"></div>
-                    <button class="btn btn-success" id="downloadBtn" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Free Trial for macOS</button>
+                    <button class="btn btn-success" id="downloadBtn" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Free Trial (macOS)</button>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
                         <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
+                    </div>
+                    <!-- Optional email after download -->
+                    <div id="optionalEmailSection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; width: 100%;">
+                        <p style="font-size: 14px; color: #333; margin-bottom: 8px;">Want posture tips and lifetime discount reminders? No spam I promise</p>
+                        <input type="email" id="downloadEmail" placeholder="Enter your email (optional)" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;" />
+                        <div id="emailError" style="color: red; font-size: 14px; margin-bottom: 10px; display: none;"></div>
+                        <button type="button" class="btn btn-outline-secondary" id="optionalEmailBtn" style="width: 100%; padding: 10px; font-size: 14px;">Get tips &amp; reminders</button>
+                        <p id="optionalEmailThanks" style="display: none; font-size: 14px; color: green; margin-top: 8px;">Thanks! We’ll be in touch.</p>
                     </div>
                 </div>
                 
@@ -155,7 +161,7 @@ gtag('config', 'G-L5YPR2LR29');
                 </h2>
                 <span class="descriptionFeature">
                     Your privacy is priceless. <br>We only depend on our users licenses for our revenue. The app works offline and all webcam images are processed on your PC. BackWatcher is secured and certified for each update.
-                    <a href="#network-privacy-faq" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still feeling uncomfortable about my privacy?</a>
+                    <a href="#network-privacy-faq" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still feeling uncomfortable about your privacy?</a>
                 </span>
                 <br>
         </div>    
@@ -172,7 +178,7 @@ gtag('config', 'G-L5YPR2LR29');
     <br>
     <br>
     <div id="network-privacy-faq" class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-        <h2 style="font-size: 2.5em; font-weight: bold; margin-bottom: 30px; text-align: center;">Still feeling uncomfortable about my privacy?</h2>
+        <h2 style="font-size: 2.5em; font-weight: bold; margin-bottom: 30px; text-align: center;">Still feeling uncomfortable about your privacy?</h2>
         <div style="font-size: 1.1em; line-height: 1.8; color: #333;">
             <p><strong>How can I verify or control the network traffic?</strong><br>
             You can fully control this with your own tools. For example, you can block or restrict BackWatcher in your firewall, only allowing it online when you activate your license. You can also use network monitors such as Little Snitch or Lulu on macOS, or GlassWire or Wireshark to see every outbound connection from the app and confirm that nothing else is sent.</p>

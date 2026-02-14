@@ -1,4 +1,4 @@
-// Email validation and download functionality
+// Download: direct CTA, optional email after
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -8,11 +8,9 @@ function validateEmail(email) {
 const DOWNLOAD_URL = "https://github.com/Soufi54/BackWatcherWebsite/releases/download/v1.2.4/BackWatcher-1.2.4-arm64.dmg";
 
 // Supabase configuration for storing download leads
-// Uses the same Supabase instance as checkout.js
 const SUPABASE_URL = 'https://srdtobhozcsupwyfxvxv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyZHRvYmhvemNzdXB3eWZ4dnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzMTU1NDEsImV4cCI6MjA4NDg5MTU0MX0.xH48IkxcRqvLEvqBvIY4PmuxIoeF2lsc0C6Tsnj7HbM';
 
-// Store email as download lead in Supabase
 async function storeDownloadLead(email) {
     try {
         const response = await fetch(`${SUPABASE_URL}/rest/v1/download_leads`, {
@@ -36,52 +34,25 @@ async function storeDownloadLead(email) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const emailInput = document.getElementById('downloadEmail');
     const downloadBtn = document.getElementById('downloadBtn');
-    const emailError = document.getElementById('emailError');
     const downloadLinkContainer = document.getElementById('downloadLinkContainer');
     const downloadLink = document.getElementById('downloadLink');
+    const optionalEmailSection = document.getElementById('optionalEmailSection');
+    const emailInput = document.getElementById('downloadEmail');
+    const emailError = document.getElementById('emailError');
+    const optionalEmailBtn = document.getElementById('optionalEmailBtn');
+    const optionalEmailThanks = document.getElementById('optionalEmailThanks');
 
+    // Click "Download Free Trial (macOS)" → show download link immediately, no email required
     if (downloadBtn) {
-        downloadBtn.addEventListener('click', async function() {
-            const email = emailInput.value.trim();
-            
-            // Clear previous errors
-            emailError.style.display = 'none';
-            emailError.textContent = '';
-
-            // Validate email
-            if (!email) {
-                emailError.textContent = 'Please enter your email address';
-                emailError.style.display = 'block';
-                return;
-            }
-
-            if (!validateEmail(email)) {
-                emailError.textContent = 'Please enter a valid email address';
-                emailError.style.display = 'block';
-                return;
-            }
-
-            // Disable button while processing
-            downloadBtn.disabled = true;
-            downloadBtn.textContent = 'Processing...';
-
-            // Store email as lead in Supabase (don't block if it fails)
-            await storeDownloadLead(email);
-
-            // Email is valid - show download link
+        downloadBtn.addEventListener('click', function() {
             downloadLink.href = DOWNLOAD_URL;
             downloadLinkContainer.style.display = 'block';
-            emailInput.disabled = true;
+            optionalEmailSection.style.display = 'block';
             downloadBtn.style.display = 'none';
 
-            // Store email locally for pre-filling checkout
-            localStorage.setItem('backwatcher_email', email);
-
-            // Track email entry event
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'email_entry', {
+                gtag('event', 'download_cta_click', {
                     'event_category': 'engagement',
                     'event_label': 'download_form'
                 });
@@ -89,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Track actual download link click (GitHub release)
+    // Track actual download link click
     if (downloadLink) {
         downloadLink.addEventListener('click', function() {
             if (typeof gtag !== 'undefined') {
@@ -105,11 +76,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Allow Enter key to submit
-    if (emailInput) {
+    // Optional email: submit only if they entered a valid email
+    if (optionalEmailBtn && emailInput) {
+        optionalEmailBtn.addEventListener('click', async function() {
+            const email = emailInput.value.trim();
+            emailError.style.display = 'none';
+            emailError.textContent = '';
+
+            if (!email) {
+                return; // optional - do nothing
+            }
+
+            if (!validateEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+                return;
+            }
+
+            optionalEmailBtn.disabled = true;
+            optionalEmailBtn.textContent = 'Sending...';
+
+            await storeDownloadLead(email);
+            localStorage.setItem('backwatcher_email', email);
+
+            optionalEmailThanks.style.display = 'block';
+            emailInput.disabled = true;
+            optionalEmailBtn.style.display = 'none';
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_entry', {
+                    'event_category': 'engagement',
+                    'event_label': 'optional_after_download'
+                });
+            }
+        });
+    }
+
+    if (emailInput && optionalEmailBtn) {
         emailInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                downloadBtn.click();
+                optionalEmailBtn.click();
             }
         });
     }
