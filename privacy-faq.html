@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="src/icon.png">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+    <meta name="description" content="BackWatcher privacy FAQ — Verify network traffic and control your data. 100% offline posture tracking.">
+    <meta name="author" content="BackWatcher">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5YPR2LR29"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-L5YPR2LR29');
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="BackWatcherWebsite2.css">
+    <title>Privacy FAQ — BackWatcher</title>
+    <style>
+        .privacy-faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px;
+            line-height: 1.8;
+        }
+        .privacy-faq-container h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .privacy-faq-container .content {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .privacy-faq-container .content p {
+            margin-bottom: 20px;
+        }
+        .privacy-faq-container .links {
+            text-align: center;
+            margin-top: 32px;
+        }
+        .privacy-faq-container .links a {
+            display: inline-block;
+            margin: 0 12px;
+            color: #007bff;
+        }
+        @media (max-width: 768px) {
+            .privacy-faq-container h1 { font-size: 1.8em; }
+            .privacy-faq-container { padding: 32px 16px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+        <a class="my-0 mr-md-auto font-weight-normal" href="index.html" style="color: black; font-size: 1.4em;"><img width="40px" style="margin: auto; vertical-align: -13px;" src="src/icon.png"> BackWatcher</a>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="index.html#pricing">Pricing</a>
+            <a class="p-2 text-dark" href="index.html#AboutUs">About us</a>
+        </nav>
+        <button type="button" class="btn btn-success" id="BUYnav" onclick="location.href='index.html#pricing'">Download</button>
+    </div>
+
+    <div class="privacy-faq-container">
+        <h1>Still feeling uncomfortable about your privacy?</h1>
+        <div class="content">
+            <p><strong>How can I verify or control the network traffic?</strong><br>
+            You can fully control this with your own tools. For example, you can block or restrict BackWatcher in your firewall, only allowing it online when you activate your license. You can also use network monitors such as Little Snitch or Lulu on macOS, or GlassWire or Wireshark to see every outbound connection from the app and confirm that nothing else is sent.</p>
+        </div>
+        <p class="links">
+            <a href="privacy-policy.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'privacy_faq_page'})">Read our full Privacy Policy →</a>
+            <a href="index.html">← Back to Home</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <img src="src/icon.png" width="30" height="30"> BackWatcher
+                    <small style="margin-bottom: 1px !important" class="d-block mb-3 text-muted">193 rue du Maréchal Oudinot,<br> Nancy, France </small>
+                    <small class="d-block mb-3 text-muted"> All rights reserved <br> © 2019-2026</small>
+                </div>
+                <div class="col-6 col-md">
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="index.html#AboutUs">About us</a></li>
+                        <li><a class="text-muted" href="mailto:contact@backwatcher.app">contact: contact@backwatcher.app</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="index.html#pricing">Pricing</a></li>
+                        <li><a class="text-muted" href="checkout.html">Download</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="terms-of-service.html">Terms of service</a></li>
+                        <li><a class="text-muted" href="privacy-policy.html">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center;"> Made with <span style="color: #e25555;">&#9829;</span> from France</div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

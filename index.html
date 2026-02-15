@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="src/icon.png">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
-    <meta name="description" content="BackWatcher enables you to keep a good posture while using your computer. BackWatcher is the innovative solution that enables you to spend your time in front of your screen without threatening your health">
+    <meta name="description" content="Webcam-based posture alerts for Mac. 100% offline, no wearables. Get reminded when you slouch — try free for 7 days.">
     <meta name="author" content="BackWatcher">
     <!--     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  -->
@@ -36,7 +36,7 @@ gtag('config', 'G-L5YPR2LR29');
 -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="BackWatcherWebsite2.css">
-    <title>BackWatcher</title>
+    <title>BackWatcher — Offline Posture Alerts for macOS</title>
 </head>
 
 <body>
@@ -47,33 +47,33 @@ gtag('config', 'G-L5YPR2LR29');
             <a class="p-2 text-dark" href="index.html#pricing">Pricing</a>
             <a class="p-2 text-dark" href="index.html#AboutUs">About us</a>
         </nav>
-        <button style="background-color: white; color: red;" type="button" class="btn btn-danger" id="BUYnav" onclick="gtag('event', 'buy_click', {'event_category': 'engagement', 'event_label': 'nav_button'}); document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Buy</button>
+        <button type="button" class="btn btn-success" id="BUYnav" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'nav_download'}); document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'})">Download</button>
     </div>
     <div class="banner" data-aos="fade-up">
         <div class="BannerText">
             <br><br>
             <span>
-                <h1>Catch yourself slouching in real time.</h1>
+                <h1>Fix your posture automatically while you work.</h1>
             </span>
             <br>
             <br>
             <br>
             <span class="ValueProposition">
-                <h2>BackWatcher gently alerts you when your posture starts slipping — while you work.</h2>
+                <h2>BackWatcher detects slouching through your webcam and alerts you instantly — 100% offline.</h2>
             </span>
             <br>
         
             <div id="GridLandingContainer" style="display: flex; flex-direction: column; align-items: center; gap: 15px; max-width: 450px;">
                 <!-- Download CTA - no email required -->
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
-                    <button class="btn btn-success" id="downloadBtn" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Free Trial (macOS)</button>
+                    <button class="btn btn-success" id="downloadBtn" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Free Trial (macOS)</button>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
                         <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
                     </div>
                     <!-- Optional email after download -->
                     <div id="optionalEmailSection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; width: 100%;">
-                        <p style="font-size: 14px; color: #333; margin-bottom: 8px;">Want posture tips and lifetime discount reminders? No spam I promise</p>
+                        <p style="font-size: 14px; color: #333; margin-bottom: 8px;">Get updates &amp; posture tips (optional).<br>No tracking. Unsubscribe anytime.</p>
                         <input type="email" id="downloadEmail" placeholder="Enter your email (optional)" style="width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;" />
                         <div id="emailError" style="color: red; font-size: 14px; margin-bottom: 10px; display: none;"></div>
                         <button type="button" class="btn btn-outline-secondary" id="optionalEmailBtn" style="width: 100%; padding: 10px; font-size: 14px;">Get tips &amp; reminders</button>
@@ -81,9 +81,9 @@ gtag('config', 'G-L5YPR2LR29');
                     </div>
                 </div>
                 
-                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 5px;">
-                    <span style="color: #666; font-size: 0.9em;">🔒 Apple-notarized macOS dmg app</span>
-                    <span style="color: #666; font-size: 0.9em;">💳 Payments secured by Stripe</span>
+                <div class="trust-badges">
+                    <span class="trust-badge">🔒 Apple notarized</span>
+                    <span class="trust-badge">💳 Stripe secured</span>
                 </div>
                 
                 <div style="margin-top: 10px;">
@@ -102,6 +102,52 @@ gtag('config', 'G-L5YPR2LR29');
     <br>
     <br>
     <br>
+
+    <!-- 1. Problem -->
+    <section id="problem" class="problem-section">
+        <div class="GridFeaturesContainer">
+            <div class="BeforeAfter" data-aos="slide-right" id="descriptionFeature">
+                <h2 class="WhyTitle">Sitting 8+ hours a day slowly reshapes your spine.</h2>
+                <span class="descriptionFeature">
+                    BackWatcher trains awareness.<br>
+                    You correct yourself — not a device forcing you.
+                </span>
+            </div>
+            <div class="BeforeAfter" data-aos="slide-left">
+                <img class="BeforeAfterimg" src="src/BeforeAfter.png" alt="Posture awareness">
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <br>
+
+    <!-- 2. How it works -->
+    <section id="how-it-works" class="how-it-works-section">
+        <h2 class="how-it-works-title">How it works</h2>
+        <div class="how-it-works-steps">
+            <div class="how-it-works-step" data-aos="fade-up">
+                <span class="how-it-works-icon" aria-hidden="true">1</span>
+                <h3 class="how-it-works-step-title">Launch the app</h3>
+                <p class="how-it-works-step-desc">Install BackWatcher and open it on your Mac.</p>
+            </div>
+            <div class="how-it-works-step" data-aos="fade-up" data-aos-delay="100">
+                <span class="how-it-works-icon" aria-hidden="true">2</span>
+                <h3 class="how-it-works-step-title">Sit normally</h3>
+                <p class="how-it-works-step-desc">Work as usual. The app watches in the background.</p>
+            </div>
+            <div class="how-it-works-step" data-aos="fade-up" data-aos-delay="200">
+                <span class="how-it-works-icon" aria-hidden="true">3</span>
+                <h3 class="how-it-works-step-title">Get alerted when you slouch</h3>
+                <p class="how-it-works-step-desc">A gentle reminder helps you correct your posture.</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <br>
+
+    <!-- 3. Trust cards -->
     <div class="card-line">
         <div data-aos="slide-up" class="card" style="width: 21rem;">
             <svg class="bi-bi-cloud-slash" width="10em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +165,7 @@ gtag('config', 'G-L5YPR2LR29');
             </svg>
             <div class="card-body">
                 <h5 class="card-title">SECURED</h5>
-                <p class="card-text">The BackWatcher App is notarized by Apple and the Microsoft version is certified by Microsoft at each update</p>
+                <p class="card-text">Notarized by Apple.</p>
             </div>
         </div>
         <div data-aos="slide-up" class="card" style="width: 21rem;">
@@ -134,97 +180,134 @@ gtag('config', 'G-L5YPR2LR29');
             </div>
         </div>
     </div>
-    <br>
-    <br><br>
-    <br>
-    <div class="GridFeaturesContainer" >
-        <div class="BeforeAfter" data-aos="slide-right" id="descriptionFeature">
-                <h2 class="WhyTitle">Don't end up with<br> hunchback posture</h2>
-                <span class="descriptionFeature">
-                    Spending hours on your computer viciously affects your posture.<br>
-                    BackWatcher reinforces <strong> postive habits</strong> and avoids <strong> muscle wasting </strong>contrary to classic brace posture correctors.
-                </span>
-        </div>    
-        <div class="BeforeAfter" data-aos="slide-left" >
-            <img class="BeforeAfterimg" src="src/BeforeAfter.png">
-        </div>
-        
-        <div class="BeforeAfter" data-aos="slide-right">
-            <img class="BeforeAfterimg2" src="src/workflow.png">
-        </div>    
-        <div class="BeforeAfter" data-aos="slide-left">
-                <h2 class="WhyTitle2"> No need to choose between your health and your productivity
-                </h2>
-                <span class="descriptionFeature">
-                    Only focus on your tasks.
-                    BackWatcher will warn you as soon as you have<strong> bad posture</strong>.
-                </span>
-                <br>
-        </div>
-        
-        <div class="BeforeAfter" data-aos="slide-right">
-                <h2 class="WhyTitle2"> Privacy by design, not by promise.
-                </h2>
-                <span class="descriptionFeature">
-                    Your privacy is priceless. <br>We only depend on our users licenses for our revenue. The app works offline and all webcam images are processed on your PC. BackWatcher is secured and certified for each update.
-                    <a href="#network-privacy-faq" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still feeling uncomfortable about your privacy?</a>
-                </span>
-                <br>
-        </div>    
-        <div class="BeforeAfter" data-aos="slide-left" >
-            <svg class="bi bi-shield-shaded" class="BeforeAfterimg2" width="18em" height="18em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M5.443 1.991a60.17 60.17 0 0 0-2.725.802.454.454 0 0 0-.315.366C1.87 7.056 3.1 9.9 4.567 11.773c.736.94 1.533 1.636 2.197 2.093.333.228.626.394.857.5.116.053.21.089.282.11A.73.73 0 0 0 8 14.5c.007-.001.038-.005.097-.023.072-.022.166-.058.282-.111.23-.106.525-.272.857-.5a10.197 10.197 0 0 0 2.197-2.093C12.9 9.9 14.13 7.056 13.597 3.159a.454.454 0 0 0-.315-.366c-.626-.2-1.682-.526-2.725-.802C9.491 1.71 8.51 1.5 8 1.5c-.51 0-1.49.21-2.557.491zm-.256-.966C6.23.749 7.337.5 8 .5c.662 0 1.77.249 2.813.525a61.09 61.09 0 0 1 2.772.815c.528.168.926.623 1.003 1.184.573 4.197-.756 7.307-2.367 9.365a11.191 11.191 0 0 1-2.418 2.3 6.942 6.942 0 0 1-1.007.586c-.27.124-.558.225-.796.225s-.526-.101-.796-.225a6.908 6.908 0 0 1-1.007-.586 11.192 11.192 0 0 1-2.417-2.3C2.167 10.331.839 7.221 1.412 3.024A1.454 1.454 0 0 1 2.415 1.84a61.11 61.11 0 0 1 2.772-.815z" />
-                <path d="M8 2.25c.909 0 3.188.685 4.254 1.022a.94.94 0 0 1 .656.773c.814 6.424-4.13 9.452-4.91 9.452V2.25z" />
-            </svg>
-        </div>
-    </div>
     <br><br>
     <br>
     <br>
-    <br>
-    <br>
-    <div id="network-privacy-faq" class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-        <h2 style="font-size: 2.5em; font-weight: bold; margin-bottom: 30px; text-align: center;">Still feeling uncomfortable about your privacy?</h2>
-        <div style="font-size: 1.1em; line-height: 1.8; color: #333;">
-            <p><strong>How can I verify or control the network traffic?</strong><br>
-            You can fully control this with your own tools. For example, you can block or restrict BackWatcher in your firewall, only allowing it online when you activate your license. You can also use network monitors such as Little Snitch or Lulu on macOS, or GlassWire or Wireshark to see every outbound connection from the app and confirm that nothing else is sent.</p>
+
+    <!-- 4. Comparison -->
+    <section id="comparison" class="comparison-section">
+        <div class="comparison-inner">
+            <h2 class="comparison-title">Most posture solutions either attach to your body — or restrict it.</h2>
+            <p class="comparison-subtitle">BackWatcher simply uses the webcam you already have.</p>
+            <h3 class="comparison-question">Why not just use a wearable or a brace?</h3>
+            <div class="comparison-table-wrap">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Wearables</th>
+                            <th>Posture Braces</th>
+                            <th>BackWatcher</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No battery required</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>No charging needed</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Comfortable to use</td>
+                            <td>Often ❌</td>
+                            <td>Often ❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Always there when you work</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Doesn’t restrict movement</td>
+                            <td>✅</td>
+                            <td>Often ❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>No subscription</td>
+                            <td>Sometimes ❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>One-time purchase</td>
+                            <td>Rare ❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Works fully offline</td>
+                            <td>Rare ❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Uses hardware you already own</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <p style="text-align: center; margin-top: 24px;">
-            <a href="privacy-policy.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'faq_section'})" style="color: #007bff;">Read our full Privacy Policy →</a>
-        </p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div id="pricing" class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h2 style="font-size: 5em; margin-bottom:0px;font-weight: bold;">Pricing</h2>
-        <p style="font-size: 1.3em;font-weight: normal; color:green; font-style: italic;margin-bottom:0px;">"Take care of your body. It's the only place you have to live"</p> <span style="color: grey; font-style: italic;font-size: 0.9em;">Jim Rohn</span>
+    </section>
 
-    </div>
-
+    <br><br>
     <br>
     <br>
-    <br>
-    
 
-    <div id="Pricing">
-
-        
-
-            <button class="btn btn-danger" onclick="gtag('event', 'buy_click', {'event_category': 'engagement', 'event_label': 'main_cta'}); location.href='checkout.html'" id="BUY2">BUY NOW FOR $99</button>                
-            
-        <br>
-        <br>
-        <div class="PricingFeatures">
-            <span>Pay once for a <strong>lifetime change</strong> </span>   <br>     
-            <span> <strong>Unlimited</strong> posture tracking</span>   <br>
-            <span> Pause reminder</span><br>
-            <span> <strong>7-day free trial</strong> included</span><br>    
-            <a href="index.html#downloadSection">Download free trial</a>        
+    <!-- 5. Privacy -->
+    <section id="privacy" class="privacy-section">
+        <div class="GridFeaturesContainer">
+            <div class="BeforeAfter" data-aos="slide-right">
+                <h2 class="WhyTitle2">Privacy by design.</h2>
+                <span class="descriptionFeature">
+                    All camera processing happens locally.<br>
+                    No images are stored.<br>
+                    No data leaves your device.<br>
+                    <a href="privacy-faq.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still uncomfortable about your privacy?</a>
+                </span>
+            </div>
+            <div class="BeforeAfter" data-aos="slide-left">
+                <svg class="bi bi-shield-shaded BeforeAfterimg2" width="18em" height="18em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.443 1.991a60.17 60.17 0 0 0-2.725.802.454.454 0 0 0-.315.366C1.87 7.056 3.1 9.9 4.567 11.773c.736.94 1.533 1.636 2.197 2.093.333.228.626.394.857.5.116.053.21.089.282.11A.73.73 0 0 0 8 14.5c.007-.001.038-.005.097-.023.072-.022.166-.058.282-.111.23-.106.525-.272.857-.5a10.197 10.197 0 0 0 2.197-2.093C12.9 9.9 14.13 7.056 13.597 3.159a.454.454 0 0 0-.315-.366c-.626-.2-1.682-.526-2.725-.802C9.491 1.71 8.51 1.5 8 1.5c-.51 0-1.49.21-2.557.491zm-.256-.966C6.23.749 7.337.5 8 .5c.662 0 1.77.249 2.813.525a61.09 61.09 0 0 1 2.772.815c.528.168.926.623 1.003 1.184.573 4.197-.756 7.307-2.367 9.365a11.191 11.191 0 0 1-2.418 2.3 6.942 6.942 0 0 1-1.007.586c-.27.124-.558.225-.796.225s-.526-.101-.796-.225a6.908 6.908 0 0 1-1.007-.586 11.192 11.192 0 0 1-2.417-2.3C2.167 10.331.839 7.221 1.412 3.024A1.454 1.454 0 0 1 2.415 1.84a61.11 61.11 0 0 1 2.772-.815z" />
+                    <path d="M8 2.25c.909 0 3.188.685 4.254 1.022a.94.94 0 0 1 .656.773c.814 6.424-4.13 9.452-4.91 9.452V2.25z" />
+                </svg>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <br><br>
+    <br>
+    <br>
+
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-card">
+            <h2 class="pricing-heading">Pricing</h2>
+            <p class="pricing-plan">Lifetime license</p>
+            <p class="pricing-price">$99</p>
+            <p class="pricing-subtitle">One-time purchase. Free updates.</p>
+            <ul class="pricing-features">
+                <li>7-day free trial included</li>
+                <li>Unlimited posture tracking</li>
+                <li>Pause reminder</li>
+            </ul>
+            <div class="pricing-ctas">
+                <a href="#downloadSection" class="btn btn-success pricing-cta-primary" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'pricing_trial'}); return false;">Download trial</a>
+                <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'});" id="BUY2">Buy lifetime — $99</a>
+            </div>
+            <p class="pricing-quote">"Take care of your body. It's the only place you have to live." — Jim Rohn</p>
+        </div>
+    </section>
 
 
 
@@ -246,16 +329,13 @@ gtag('config', 'G-L5YPR2LR29');
         <br>
         <br>
         <span class="AboutUsText">
-            My name is Chaker. I am the founder of BackWatcher and a data analytics engineer in Paris.
+            I'm <a href="https://www.linkedin.com/in/chakerm/" target="_blank" rel="noopener noreferrer">Chaker</a>, data engineer based in Paris.
             <br>
             <br>
-            As I spend so many hours on my PC I noticed that I have developed a hunchback posture. I didn't find a satisfying solution so I decided to use my useless webcam to remind me to stop slouching. Instead of using a small personal executable, I thought that many people could be in the same situation. So I decided to develop a distributable and secured app for everyone.
+            I built BackWatcher after noticing my posture degrading from long coding sessions.
             <br>
             <br>
-            As using a webcam for an app is sensitive. I made the app works locally on your Mac. I also expect to make it certified to increase confidence in the code of the app I coded. Stay tuned for the next updates.
-            <br>
-            <br>
-            Follow me on <a target="blank" href="https://reddit.com/u/BackWatcherDev">Reddit</a> to get the latest news about good posture and BackWatcher development.
+            The goal: create a simple, private, offline tool that reinforces healthy posture habits without wearables or subscriptions.
         </span>
     </div>
     <br>
