@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (typeof rdt !== 'undefined') {
                 rdt('track', 'Lead');
             }
+            // Meta Pixel (pixelFBBW) - track download
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
         });
     }
 
