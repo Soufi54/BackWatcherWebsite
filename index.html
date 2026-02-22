@@ -52,7 +52,7 @@ gtag('config', 'G-L5YPR2LR29');
     <link href="src/css/pricing.css" rel="stylesheet">
 -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="BackWatcherWebsite2.css">
+    <link rel="stylesheet" href="BackWatcherWebsite2.css?v=20260222f">
     <title>BackWatcher — Offline Posture Alerts for macOS</title>
 </head>
 
@@ -62,7 +62,7 @@ gtag('config', 'G-L5YPR2LR29');
         <a class="my-0 mr-md-auto font-weight-normal" href="index.html" style="color: black; font-size: 1.4em;"><img width="40px" style="margin: auto; vertical-align: -13px;" src="src/icon.png"> BackWatcher</a>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="index.html#pricing">Pricing</a>
-            <a class="p-2 text-dark" href="index.html#privacy">Privacy</a>
+            <a class="p-2 text-dark" href="privacy-faq.html">Webcam privacy</a>
             <a class="p-2 text-dark" href="index.html#AboutUs">About us</a>
         </nav>
         <button type="button" class="btn btn-success" id="BUYnav" onclick="gtag('event', 'download_click', {'event_category': 'engagement', 'event_label': 'nav_download'}); document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'})">Download</button>
@@ -71,30 +71,27 @@ gtag('config', 'G-L5YPR2LR29');
         <div class="BannerText">
             <br><br>
             <span>
-                <h1>Reduce daily neck strain caused by long desk hours.</h1>
+                <h1>Stop slouching. Stop hurting.</h1>
             </span>
             <br>
             <br>
             <br>
             <span class="ValueProposition">
-                <h2>BackWatcher uses real-time camera feedback to help you avoid sustained forward head posture — fully offline on macOS.</h2>
+                <h2>BackWatcher gently alerts you before forward posture turns into neck and upper-back tension.</h2>
             </span>
             <br>
         
             <div id="GridLandingContainer" style="display: flex; flex-direction: column; align-items: center; gap: 15px; max-width: 450px;">
                 <!-- Download CTA - no email required -->
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
-                    <button class="btn btn-success" id="downloadBtn" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free 7-Day Trial (Mac)</button>
+                    <p style="margin-bottom: 12px; font-size: 15px; color: #333; font-weight: 500;">Feel the difference in days.</p>
+                    <button class="btn btn-success" id="downloadBtn" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free 3-Day Trial — Mac</button>
+                    <p style="margin-top: 10px; margin-bottom: 4px; font-size: 13px; color: #666;">Trusted by developers &amp; remote workers.</p>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
                         <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
                     </div>
-                    <!-- 3 bullets under CTA -->
-                    <ul class="hero-bullets" style="list-style: none; padding-left: 0; margin-top: 20px; margin-bottom: 0; font-size: 15px; color: #333; line-height: 1.6;">
-                        <li style="margin-bottom: 8px;">✓ Less end-of-day neck fatigue</li>
-                        <li style="margin-bottom: 8px;">✓ Stay aware without constant reminders</li>
-                        <li>✓ No wearable. No tracking. 100% local</li>
-                    </ul>
+                    <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #333;">$69 lifetime · <a href="privacy-faq.html" onclick="if(typeof gtag==='function') gtag('event','privacy_policy_click',{'event_category':'engagement','event_label':'hero_privacy'});" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">100% local processing — privacy guaranteed</a></p>
                     <!-- Optional email after download -->
                     <div id="optionalEmailSection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; width: 100%;">
                         <p style="font-size: 14px; color: #333; margin-bottom: 8px;">Get updates &amp; posture tips (optional).<br>No tracking. Unsubscribe anytime.</p>
@@ -125,6 +122,45 @@ gtag('config', 'G-L5YPR2LR29');
     <br>
     <br>
     <br>
+    <br>
+
+    <!-- Does this feel familiar by 6pm? — pain / identification -->
+    <section id="do-you-experience" class="do-you-experience-section" data-aos="fade-up">
+        <h2 class="do-you-title">Does this feel familiar by 6pm?</h2>
+        <p class="do-you-subtitle">Long desk hours quietly build tension — until your body reminds you.</p>
+        <p class="do-you-experience-lead">It doesn't happen suddenly. It builds slowly.</p>
+        <div class="pain-grid">
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="50">
+                <span class="pain-icon" aria-hidden="true">😣</span>
+                <p class="pain-text">That stiff pull at the base of your neck</p>
+            </div>
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
+                <span class="pain-icon" aria-hidden="true">🖥️</span>
+                <p class="pain-text">Leaning forward without realizing it</p>
+            </div>
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="150">
+                <span class="pain-icon" aria-hidden="true">😮‍💨</span>
+                <p class="pain-text">Shoulders feeling heavy after long focus sessions</p>
+            </div>
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
+                <span class="pain-icon" aria-hidden="true">🪑</span>
+                <p class="pain-text">Catching yourself slouched too late</p>
+            </div>
+            <div class="pain-card pain-card-wide pain-card-aesthetic" data-aos="fade-up" data-aos-delay="250">
+                <span class="pain-icon" aria-hidden="true">😩</span>
+                <p class="pain-text">That rounded, tired-looking posture</p>
+            </div>
+        </div>
+        <p class="do-you-experience-tagline">BackWatcher interrupts it before it turns into daily strain.</p>
+    </section>
+
+    <!-- Transition vers la solution -->
+    <div class="do-you-experience-divider">
+        <span class="do-you-experience-divider-line" aria-hidden="true">—</span>
+        <p class="do-you-experience-divider-title">Here's what most people don't realize:</p>
+    </div>
+
+    <br><br>
     <br>
 
     <!-- 1. Problem -->
@@ -181,7 +217,7 @@ gtag('config', 'G-L5YPR2LR29');
             </svg>
             <div class="card-body">
                 <h5 class="card-title">OFFLINE</h5>
-                <p class="card-text">Camera processing happens locally on your Mac. Nothing is uploaded.</p>
+                <p class="card-text">Camera processing happens locally on your Mac. No image is uploaded.</p>
             </div>
         </div>
         <div data-aos="slide-up" class="card" style="width: 21rem;">
@@ -212,76 +248,87 @@ gtag('config', 'G-L5YPR2LR29');
     <!-- 4. Comparison -->
     <section id="comparison" class="comparison-section">
         <div class="comparison-inner">
-            <h2 class="comparison-title">Most posture solutions either attach to your body — or restrict it.</h2>
-            <p class="comparison-subtitle">BackWatcher simply uses the webcam you already have.</p>
-            <h3 class="comparison-question">Why not just use a wearable or a brace?</h3>
+            <h2 class="comparison-title">Why not just use a wearable or a brace?</h2>
+            <p class="comparison-subtitle">Most solutions attach to your body or restrict it.<br>BackWatcher uses the webcam you already have.</p>
             <div class="comparison-table-wrap">
                 <table class="comparison-table">
                     <thead>
                         <tr>
-                            <th>Feature</th>
+                            <th></th>
                             <th>Wearables</th>
-                            <th>Posture Braces</th>
-                            <th>BackWatcher</th>
+                            <th>Braces</th>
+                            <th class="col-highlight">BackWatcher</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>No battery required</td>
+                            <td>Nothing extra to charge</td>
                             <td>❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td class="col-neutral">✅</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
-                            <td>No charging needed</td>
+                            <td>Comfortable &amp; invisible</td>
                             <td>❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                        </tr>
-                        <tr>
-                            <td>Comfortable to use</td>
-                            <td>Often ❌</td>
-                            <td>Often ❌</td>
-                            <td>✅</td>
+                            <td>❌</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
                             <td>Always there when you work</td>
                             <td>❌</td>
                             <td>❌</td>
-                            <td>✅</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
                             <td>Doesn’t restrict movement</td>
-                            <td>✅</td>
-                            <td>Often ❌</td>
-                            <td>✅</td>
+                            <td class="col-neutral">✅</td>
+                            <td>❌</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
-                            <td>No subscription</td>
-                            <td>Sometimes ❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                        </tr>
-                        <tr>
-                            <td>One-time purchase</td>
-                            <td>Rare ❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td>One-time purchase, no subscription</td>
+                            <td>❌</td>
+                            <td class="col-neutral">✅</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
                             <td>Works fully offline</td>
-                            <td>Rare ❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td>❌</td>
+                            <td class="col-neutral">✅</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                         <tr>
                             <td>Uses hardware you already own</td>
                             <td>❌</td>
                             <td>❌</td>
-                            <td>✅</td>
+                            <td class="col-highlight">✅</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="comparison-cta">
+                <a href="#downloadSection" class="btn btn-success" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'comparison_cta'}); return false;">Try free for 3 days</a>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+    <br>
+    <br>
+
+    <!-- Social proof -->
+    <section id="social-proof" class="social-proof-section" data-aos="fade-up">
+        <p class="social-proof-label">From the community</p>
+        <h2 class="social-proof-title">What people are saying</h2>
+        <div class="social-proof-card">
+            <span class="social-proof-quote-mark" aria-hidden="true">"</span>
+            <blockquote>Thanks for what you're doing! Your app is truly incredible and I can't wait to see where it goes and help you improve it through feedback and usage.</blockquote>
+            <div class="social-proof-footer">
+                <div class="social-proof-author-block">
+                    <p class="social-proof-author">Evan, Sophomore, US</p>
+                    <span class="social-proof-source">Reddit</span>
+                </div>
+                <a class="social-proof-link" href="https://www.reddit.com/r/windows/comments/gcxgca/i_developed_a_windows_app_named_backwatcher_for/" target="_blank" rel="noopener noreferrer">See the discussion <span class="social-proof-arrow">→</span></a>
             </div>
         </div>
     </section>
@@ -298,8 +345,7 @@ gtag('config', 'G-L5YPR2LR29');
                 <span class="descriptionFeature">
                     All camera processing happens locally.<br>
                     No images are stored.<br>
-                    No data leaves your device.<br>
-                    <a href="privacy-faq.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still uncomfortable about your privacy?</a>
+                    <a href="privacy-faq.html" onclick="gtag('event', 'privacy_policy_click', {'event_category': 'engagement', 'event_label': 'features_section'})">Still uncomfortable about the camera watching you?</a>
                 </span>
             </div>
             <div class="BeforeAfter" data-aos="slide-left">
@@ -319,16 +365,17 @@ gtag('config', 'G-L5YPR2LR29');
         <div class="pricing-card">
             <h2 class="pricing-heading">Pricing</h2>
             <p class="pricing-plan">Lifetime license</p>
-            <p class="pricing-price">$99</p>
+            <p class="pricing-price">$69</p>
+            <p class="pricing-subtitle">Designed for productive developers &amp; remote workers.</p>
             <p class="pricing-subtitle">One-time purchase. Free updates.</p>
             <ul class="pricing-features">
-                <li>7-day free trial included</li>
+                <li>3-day free trial included</li>
                 <li>Unlimited posture tracking</li>
                 <li>Pause reminder</li>
             </ul>
             <div class="pricing-ctas">
                 <a href="#downloadSection" class="btn btn-success pricing-cta-primary" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'pricing_trial'}); return false;">Download trial</a>
-                <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'});" id="BUY2">Buy lifetime — $99</a>
+                <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'});" id="BUY2">Buy lifetime — $69</a>
             </div>
             <p class="pricing-quote">"Take care of your body. It's the only place you have to live." — Jim Rohn</p>
         </div>

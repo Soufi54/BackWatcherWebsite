@@ -38,7 +38,7 @@ const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 - Copy **anon public** key → paste as `SUPABASE_ANON_KEY`
 
 ### 3. Verify Stripe Price ID
-Make sure your Stripe product price is set to **$99** and the `STRIPE_PRICE_ID` secret in Supabase matches.
+Make sure your Stripe product price is set to **$69** and the `STRIPE_PRICE_ID` secret in Supabase matches.
 
 ### 4. Edge Functions (create-checkout-session + stripe-webhook)
 This repo includes fixed Edge Functions under `supabase/functions/`. **Deploy and env setup:** see **[supabase/FUNCTIONS_DEPLOY.md](supabase/FUNCTIONS_DEPLOY.md)**.
@@ -63,6 +63,9 @@ To track installations and conversions for Reddit Ads:
 - **Lead** – when user clicks “Download Now” (app install intent)
 - **Purchase** – on success page after payment (license / conversion)
 
+### 7. PostHog Analytics
+BackWatcher uses **PostHog** for product analytics (website usage, feature usage, funnels). If you add the PostHog snippet to your pages, configure your **Project API Key** and **Host** (e.g. `https://us.posthog.com` or your self-hosted URL) in the script. PostHog is used alongside GA4 and Reddit Pixel for analytics and conversion insights.
+
 ---
 
 ## Quick Checklist
@@ -71,7 +74,7 @@ To track installations and conversions for Reddit Ads:
 - [x] Updated `DOWNLOAD_URL` in `js/download.js`
 - [ ] Updated `SUPABASE_URL` in `js/download.js` and `js/checkout.js`
 - [ ] Updated `SUPABASE_ANON_KEY` in `js/download.js` and `js/checkout.js`
-- [ ] Verified Stripe price is $99
+- [ ] Verified Stripe price is $69
 - [ ] Replaced `REPLACE_WITH_YOUR_REDDIT_PIXEL_ID` in `index.html`, `success.html`, `checkout.html` with your Reddit Pixel ID
 
 ### Security

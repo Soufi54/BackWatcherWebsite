@@ -1,6 +1,9 @@
 # Google Analytics 4 Tagging Plan
 
-## Measurement ID
+## Analytics Stack
+BackWatcher uses **Google Analytics 4 (GA4)** for web analytics and conversion tracking, and **PostHog** for product analytics (usage, funnels, feature insights). This document focuses on GA4 events; PostHog may mirror or extend these events depending on configuration.
+
+## GA4 Measurement ID
 **G-L5YPR2LR29**
 
 ## Overview
@@ -25,7 +28,7 @@ This document outlines all GA4 events tracked on the BackWatcher website for ana
 | Event Name | Description | Trigger | File | Label | Value |
 |------------|-------------|---------|------|-------|-------|
 | `checkout_initiated` | User proceeds to Stripe checkout | Successful redirect to Stripe | `js/checkout.js` | `stripe_redirect` | - |
-| `purchase_complete` | User completes purchase | Landing on success page | `success.html` | `lifetime_license` | $99 USD |
+| `purchase_complete` | User completes purchase | Landing on success page | `success.html` | `lifetime_license` | $69 USD |
 
 ---
 
@@ -45,7 +48,7 @@ This document outlines all GA4 events tracked on the BackWatcher website for ana
 - **Category:** engagement
 - **Labels:**
   - `nav_button` - Buy button in navigation bar
-  - `main_cta` - "BUY NOW FOR $99" button in pricing section
+  - `main_cta` - "BUY NOW FOR $69" button in pricing section
 - **Purpose:** Track purchase intent
 
 ### `privacy_policy_click`
@@ -64,7 +67,7 @@ This document outlines all GA4 events tracked on the BackWatcher website for ana
 ### `purchase_complete`
 - **Category:** conversion
 - **When:** User lands on success.html after Stripe payment
-- **Value:** $99 USD
+- **Value:** $69 USD
 - **Purpose:** Track completed purchases (main conversion)
 
 ---
