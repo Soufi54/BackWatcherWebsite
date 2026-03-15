@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="src/icon.png">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
-    <meta name="description" content="Webcam-based posture alerts for Mac. 100% offline, no wearables. Get reminded when you slouch — try free for 7 days.">
+    <meta name="description" content="Webcam-based posture alerts for Mac &amp; Windows. 100% offline, no wearables. Get reminded when you slouch — try free for 3 days.">
     <meta name="author" content="BackWatcher">
     <!--     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  -->
@@ -53,7 +53,7 @@ gtag('config', 'G-L5YPR2LR29');
 -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="BackWatcherWebsite2.css?v=20260222f">
-    <title>BackWatcher — Offline Posture Alerts for macOS</title>
+    <title>BackWatcher — Offline Posture Alerts for Mac &amp; Windows</title>
 </head>
 
 <body>
@@ -85,13 +85,16 @@ gtag('config', 'G-L5YPR2LR29');
                 <!-- Download CTA - no email required -->
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
                     <p style="margin-bottom: 12px; font-size: 15px; color: #333; font-weight: 500;">Feel the difference in days.</p>
-                    <button class="btn btn-success" id="downloadBtn" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free 3-Day Trial — Mac</button>
+                    <div id="downloadButtons" style="display: flex; flex-direction: column; gap: 10px;">
+                        <button class="btn btn-success" id="downloadBtnMac" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_mac'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Mac</button>
+                        <a href="https://apps.microsoft.com/detail/9NF8S4KH5V8V" target="_blank" class="btn btn-outline-primary" id="downloadBtnWin" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_windows'}); if(typeof rdt!=='undefined') rdt('track','Lead'); if(typeof fbq!=='undefined') fbq('track','Lead');" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Windows</a>
+                    </div>
                     <p style="margin-top: 10px; margin-bottom: 4px; font-size: 13px; color: #666;">Trusted by developers &amp; remote workers.</p>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
-                        <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now</a>
+                        <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now — Mac</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
                     </div>
-                    <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #333;">$69 lifetime · <a href="privacy-faq.html" onclick="if(typeof gtag==='function') gtag('event','privacy_policy_click',{'event_category':'engagement','event_label':'hero_privacy'});" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">100% local processing — privacy guaranteed</a></p>
+                    <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #333;">$69 lifetime · Mac &amp; Windows · <a href="privacy-faq.html" onclick="if(typeof gtag==='function') gtag('event','privacy_policy_click',{'event_category':'engagement','event_label':'hero_privacy'});" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">100% local processing — privacy guaranteed</a></p>
                     <!-- Optional email after download -->
                     <div id="optionalEmailSection" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; width: 100%;">
                         <p style="font-size: 14px; color: #333; margin-bottom: 8px;">Get updates &amp; posture tips (optional).<br>No tracking. Unsubscribe anytime.</p>
@@ -190,7 +193,7 @@ gtag('config', 'G-L5YPR2LR29');
             <div class="how-it-works-step" data-aos="fade-up">
                 <span class="how-it-works-icon" aria-hidden="true">1</span>
                 <h3 class="how-it-works-step-title">Launch the app</h3>
-                <p class="how-it-works-step-desc">Install BackWatcher and open it on your Mac.</p>
+                <p class="how-it-works-step-desc">Install BackWatcher on your Mac or Windows PC.</p>
             </div>
             <div class="how-it-works-step" data-aos="fade-up" data-aos-delay="100">
                 <span class="how-it-works-icon" aria-hidden="true">2</span>
@@ -217,7 +220,7 @@ gtag('config', 'G-L5YPR2LR29');
             </svg>
             <div class="card-body">
                 <h5 class="card-title">OFFLINE</h5>
-                <p class="card-text">Camera processing happens locally on your Mac. No image is uploaded.</p>
+                <p class="card-text">Camera processing happens locally on your device. No image is uploaded.</p>
             </div>
         </div>
         <div data-aos="slide-up" class="card" style="width: 21rem;">
@@ -374,7 +377,7 @@ gtag('config', 'G-L5YPR2LR29');
                 <li>Pause reminder</li>
             </ul>
             <div class="pricing-ctas">
-                <a href="#downloadSection" class="btn btn-success pricing-cta-primary" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'pricing_trial'}); return false;">Download trial</a>
+                <a href="#downloadSection" class="btn btn-success pricing-cta-primary" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'pricing_trial'}); return false;">Download trial — Mac &amp; Windows</a>
                 <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'});" id="BUY2">Buy lifetime — $69</a>
             </div>
             <p class="pricing-quote">"Take care of your body. It's the only place you have to live." — Jim Rohn</p>

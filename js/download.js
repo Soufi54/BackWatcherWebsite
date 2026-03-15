@@ -43,18 +43,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const optionalEmailBtn = document.getElementById('optionalEmailBtn');
     const optionalEmailThanks = document.getElementById('optionalEmailThanks');
 
-    // Click "Download Free Trial (macOS)" → show download link immediately, no email required
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function() {
+    // Click "Download Free Trial (Mac)" → show download link immediately, no email required
+    const downloadBtnMac = document.getElementById('downloadBtnMac');
+    if (downloadBtnMac) {
+        downloadBtnMac.addEventListener('click', function() {
             downloadLink.href = DOWNLOAD_URL;
             downloadLinkContainer.style.display = 'block';
             optionalEmailSection.style.display = 'block';
-            downloadBtn.style.display = 'none';
+            downloadBtnMac.style.display = 'none';
 
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'download_cta_click', {
                     'event_category': 'engagement',
-                    'event_label': 'download_form'
+                    'event_label': 'download_form_mac'
                 });
             }
         });
