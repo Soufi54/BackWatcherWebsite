@@ -5,7 +5,7 @@ function validateEmail(email) {
     return re.test(String(email).toLowerCase());
 }
 
-const DOWNLOAD_URL = "https://github.com/Soufi54/BackWatcherWebsite/releases/download/v1.2.4/BackWatcher-1.2.4-arm64.dmg";
+const DOWNLOAD_URL = "https://github.com/Soufi54/BackWatcherWebsite/releases/download/v1.3.0/BackWatcher-1.3.0-arm64.dmg";
 
 // Supabase configuration for storing download leads
 const SUPABASE_URL = 'https://srdtobhozcsupwyfxvxv.supabase.co';
