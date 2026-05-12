@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             'event_label': 'stripe_redirect'
                         });
                     }
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'AddPaymentInfo', { value: 69, currency: 'USD', content_name: 'backwatcher_lifetime' });
+                    }
+                    if (typeof rdt !== 'undefined') {
+                        rdt('track', 'AddPaymentInfo');
+                    }
                     // Redirect to Stripe Checkout
                     window.location.href = data.url;
                 } else {

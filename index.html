@@ -86,12 +86,12 @@ gtag('config', 'G-L5YPR2LR29');
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
                     <p style="margin-bottom: 12px; font-size: 15px; color: #333; font-weight: 500;">Feel the difference in days.</p>
                     <div id="downloadButtons" style="display: flex; flex-direction: column; gap: 10px;">
-                        <button class="btn btn-success" id="downloadBtnMac" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_mac'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Mac</button>
+                        <button class="btn btn-success" id="downloadBtnMac" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_mac'}); if(typeof rdt!=='undefined') rdt('track','Lead'); if(typeof fbq!=='undefined') fbq('track','Lead', {content_name: 'mac_trial_download', content_category: 'free_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Mac</button>
                         <a href="https://apps.microsoft.com/detail/9NF8S4KH5V8V" target="_blank" class="btn btn-outline-primary" id="downloadBtnWin" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_windows'}); if(typeof rdt!=='undefined') rdt('track','Lead'); if(typeof fbq!=='undefined') fbq('track','Lead');" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Windows</a>
                     </div>
                     <p style="margin-top: 10px; margin-bottom: 4px; font-size: 13px; color: #666;">Trusted by developers &amp; remote workers.</p>
                     <div id="downloadLinkContainer" style="display: none; margin-top: 15px;">
-                        <a id="downloadLink" href="#" target="_blank" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now — Mac</a>
+                        <a id="downloadLink" href="#" target="_blank" onclick="if(typeof gtag==='function') gtag('event','download_dmg_click',{'event_category':'engagement','event_label':'final_mac_download'}); if(typeof fbq!=='undefined') fbq('track','CompleteRegistration', {content_name: 'mac_dmg_started'});" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Download Now — Mac</a>
                         <p style="margin-top: 10px; font-size: 14px; color: #666;">Click to download BackWatcher for macOS</p>
                     </div>
                     <p style="margin-top: 16px; margin-bottom: 0; font-size: 14px; color: #333;">$69 lifetime · Mac &amp; Windows · <a href="privacy-faq.html" onclick="if(typeof gtag==='function') gtag('event','privacy_policy_click',{'event_category':'engagement','event_label':'hero_privacy'});" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">100% local processing — privacy guaranteed</a></p>
@@ -378,7 +378,7 @@ gtag('config', 'G-L5YPR2LR29');
             </ul>
             <div class="pricing-ctas">
                 <a href="#downloadSection" class="btn btn-success pricing-cta-primary" onclick="document.getElementById('downloadSection').scrollIntoView({behavior: 'smooth', block: 'start'}); if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'pricing_trial'}); return false;">Download trial — Mac &amp; Windows</a>
-                <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'});" id="BUY2">Buy lifetime — $69</a>
+                <a href="checkout.html" class="btn pricing-cta-secondary" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'main_cta'}); if(typeof fbq!=='undefined') fbq('track','AddToCart', {value: 69, currency: 'USD', content_name: 'backwatcher_lifetime'});" id="BUY2">Buy lifetime — $69</a>
             </div>
             <p class="pricing-quote">"Take care of your body. It's the only place you have to live." — Jim Rohn</p>
         </div>
@@ -435,7 +435,7 @@ gtag('config', 'G-L5YPR2LR29');
                 <div class="col-6 col-md">
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="index.html#pricing">Pricing</a></li>
-                        <li><a class="text-muted" href="checkout.html">Buy</a></li>
+                        <li><a class="text-muted" href="checkout.html" onclick="if(typeof gtag==='function') gtag('event','buy_click',{'event_category':'engagement','event_label':'footer_cta'}); if(typeof fbq!=='undefined') fbq('track','AddToCart', {value: 69, currency: 'USD', content_name: 'backwatcher_lifetime'});">Buy</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
