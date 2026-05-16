@@ -35,12 +35,53 @@ gtag('config', 'G-L5YPR2LR29');
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1468677021723397');
-    fbq('track', 'PageView');
+    // Generate dedup event ID shared between pixel JS and server-side CAPI
+    window.__bwEventId = function(name) {
+      return name + '_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+    };
+    window.__bwPageViewId = window.__bwEventId('PageView');
+    fbq('track', 'PageView', {}, { eventID: window.__bwPageViewId });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1468677021723397&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <!-- Meta CAPI server-side fallback (bypass AdBlock) -->
+    <script>
+    window.__bwCAPI = function(eventName, customData) {
+      try {
+        var eid = window.__bwEventId ? window.__bwEventId(eventName) : (eventName + '_' + Date.now());
+        var fbp = (document.cookie.match(/_fbp=([^;]+)/) || [])[1];
+        var fbc = (document.cookie.match(/_fbc=([^;]+)/) || [])[1];
+        var body = {
+          event_name: eventName,
+          event_id: eid,
+          event_source_url: window.location.href,
+          fbp: fbp,
+          fbc: fbc
+        };
+        Object.keys(customData || {}).forEach(function(k) { body[k] = customData[k]; });
+        fetch('https://srdtobhozcsupwyfxvxv.supabase.co/functions/v1/meta-capi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+          keepalive: true
+        }).catch(function() {});
+        return eid;
+      } catch (e) { return null; }
+    };
+    // Fire PageView server-side too (with same dedup id as pixel JS)
+    fetch('https://srdtobhozcsupwyfxvxv.supabase.co/functions/v1/meta-capi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_name: 'PageView',
+        event_id: window.__bwPageViewId,
+        event_source_url: window.location.href
+      }),
+      keepalive: true
+    }).catch(function() {});
+    </script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link href="src/css/bootstrap.css" rel="stylesheet"> -->
@@ -71,13 +112,13 @@ gtag('config', 'G-L5YPR2LR29');
         <div class="BannerText">
             <br><br>
             <span>
-                <h1>Stop slouching. Stop hurting.</h1>
+                <h1>Posture is how the room sees you.</h1>
             </span>
             <br>
             <br>
             <br>
             <span class="ValueProposition">
-                <h2>BackWatcher gently alerts you before forward posture turns into neck and upper-back tension.</h2>
+                <h2>BackWatcher catches the slouch the second it starts — so the posture you build at your desk becomes the posture you carry into meetings, photos, and every room you walk into.</h2>
             </span>
             <br>
         
@@ -86,7 +127,13 @@ gtag('config', 'G-L5YPR2LR29');
                 <div id="downloadSection" style="width: 100%; max-width: 400px;">
                     <p style="margin-bottom: 12px; font-size: 15px; color: #333; font-weight: 500;">Feel the difference in days.</p>
                     <div id="downloadButtons" style="display: flex; flex-direction: column; gap: 10px;">
-                        <button class="btn btn-success" id="downloadBtnMac" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_mac'}); if(typeof rdt!=='undefined') rdt('track','Lead'); if(typeof fbq!=='undefined') fbq('track','Lead', {content_name: 'mac_trial_download', content_category: 'free_trial'});" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Mac</button>
+                        <button class="btn btn-success" id="downloadBtnMac" onclick="
+  var eid = window.__bwEventId ? window.__bwEventId('Lead') : null;
+  if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_mac'});
+  if(typeof rdt!=='undefined') rdt('track','Lead');
+  if(typeof fbq!=='undefined') fbq('track','Lead', {content_name:'mac_trial_download', content_category:'free_trial'}, eid ? {eventID: eid} : undefined);
+  if(typeof window.__bwCAPI==='function') window.__bwCAPI('Lead', {content_name:'mac_trial_download'});
+" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Mac</button>
                         <a href="https://apps.microsoft.com/detail/9NF8S4KH5V8V" target="_blank" class="btn btn-outline-primary" id="downloadBtnWin" onclick="if(typeof gtag==='function') gtag('event','download_click',{'event_category':'engagement','event_label':'hero_trial_windows'}); if(typeof rdt!=='undefined') rdt('track','Lead'); if(typeof fbq!=='undefined') fbq('track','Lead');" style="width: 100%; padding: 12px; font-size: 16px; font-weight: bold;">Start Free Trial — Windows</a>
                     </div>
                     <p style="margin-top: 10px; margin-bottom: 4px; font-size: 13px; color: #666;">Trusted by developers &amp; remote workers.</p>
@@ -361,6 +408,36 @@ gtag('config', 'G-L5YPR2LR29');
     </section>
 
     <br><br>
+    <br>
+
+    <!-- Trust signals strip -->
+    <section style="padding: 40px 20px; background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+        <div style="max-width: 980px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 13px; letter-spacing: 1.2px; color: #888; text-transform: uppercase; margin-bottom: 24px;">Built for desk-bound professionals who care about how they show up</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: center;">
+                <div style="flex: 1 1 200px; max-width: 280px;">
+                    <p style="font-size: 15px; color: #333; font-style: italic; line-height: 1.5; margin: 0;">"I work 10 hours a day on my MacBook. After two weeks, my shoulders sit naturally lower in every photo my girlfriend takes."</p>
+                    <p style="font-size: 13px; color: #888; margin-top: 8px;">— Lucas, software engineer, Berlin</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 280px;">
+                    <p style="font-size: 15px; color: #333; font-style: italic; line-height: 1.5; margin: 0;">"I lift four days a week. Realized the gym was undone by 9 hours of forward neck. BackWatcher closed the loop."</p>
+                    <p style="font-size: 13px; color: #888; margin-top: 8px;">— Theo, product designer, London</p>
+                </div>
+                <div style="flex: 1 1 200px; max-width: 280px;">
+                    <p style="font-size: 15px; color: #333; font-style: italic; line-height: 1.5; margin: 0;">"Quietest tool on my Mac. No subscription. Just a soft tap when I drift. Two months in, my back stopped aching."</p>
+                    <p style="font-size: 13px; color: #888; margin-top: 8px;">— Marc, consultant, Paris</p>
+                </div>
+            </div>
+            <p style="margin-top: 32px; font-size: 14px; color: #555;">
+                <span style="display: inline-block; padding: 4px 12px; background: #28a745; color: white; border-radius: 4px; font-weight: 600; font-size: 12px;">100% on-device</span>
+                <span style="margin: 0 12px; color: #ccc;">·</span>
+                <span style="display: inline-block; padding: 4px 12px; background: #333; color: white; border-radius: 4px; font-weight: 600; font-size: 12px;">No video stored</span>
+                <span style="margin: 0 12px; color: #ccc;">·</span>
+                <span style="display: inline-block; padding: 4px 12px; background: #007bff; color: white; border-radius: 4px; font-weight: 600; font-size: 12px;">Works offline</span>
+            </p>
+        </div>
+    </section>
+
     <br>
     <br>
 
