@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         });
                     }
                     if (typeof fbq !== 'undefined') {
-                        fbq('track', 'AddPaymentInfo', { value: 69, currency: 'USD', content_name: 'backwatcher_lifetime' });
+                        fbq('track', 'AddPaymentInfo', { value: 39, currency: 'USD', content_name: 'backwatcher_lifetime' });
                     }
                     if (typeof rdt !== 'undefined') {
                         rdt('track', 'AddPaymentInfo');
