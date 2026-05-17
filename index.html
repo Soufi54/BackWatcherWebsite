@@ -61,19 +61,45 @@ gtag('config', 'G-L5YPR2LR29');
     src="https://www.facebook.com/tr?id=1468677021723397&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-    <!-- Meta CAPI server-side fallback (bypass AdBlock) -->
+    <!-- Meta CAPI server-side fallback (bypass AdBlock) + event log persistence -->
     <script>
+    (function() {
+      // Read URL params once, persist in sessionStorage so events past PageView keep them
+      var params = new URLSearchParams(location.search);
+      var ctx = {
+        angle: params.get('angle') || 'image',
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_content: params.get('utm_content') || '',
+        is_test: params.get('test') === '1' || sessionStorage.getItem('bw_test') === '1'
+      };
+      if (params.get('test') === '1') sessionStorage.setItem('bw_test', '1');
+      // Persist to sessionStorage for use across pages
+      Object.keys(ctx).forEach(function(k) {
+        if (ctx[k] !== '' && ctx[k] !== false) sessionStorage.setItem('bw_' + k, String(ctx[k]));
+      });
+      window.__bwCtx = ctx;
+    })();
+
     window.__bwCAPI = function(eventName, customData) {
       try {
         var eid = window.__bwEventId ? window.__bwEventId(eventName) : (eventName + '_' + Date.now());
         var fbp = (document.cookie.match(/_fbp=([^;]+)/) || [])[1];
         var fbc = (document.cookie.match(/_fbc=([^;]+)/) || [])[1];
+        var ctx = window.__bwCtx || {};
         var body = {
           event_name: eventName,
           event_id: eid,
           event_source_url: window.location.href,
           fbp: fbp,
-          fbc: fbc
+          fbc: fbc,
+          angle: ctx.angle,
+          utm_source: ctx.utm_source,
+          utm_medium: ctx.utm_medium,
+          utm_campaign: ctx.utm_campaign,
+          utm_content: ctx.utm_content,
+          is_test: ctx.is_test
         };
         Object.keys(customData || {}).forEach(function(k) { body[k] = customData[k]; });
         fetch('https://srdtobhozcsupwyfxvxv.supabase.co/functions/v1/meta-capi', {
@@ -86,16 +112,25 @@ gtag('config', 'G-L5YPR2LR29');
       } catch (e) { return null; }
     };
     // Fire PageView server-side too (with same dedup id as pixel JS)
-    fetch('https://srdtobhozcsupwyfxvxv.supabase.co/functions/v1/meta-capi', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event_name: 'PageView',
-        event_id: window.__bwPageViewId,
-        event_source_url: window.location.href
-      }),
-      keepalive: true
-    }).catch(function() {});
+    (function() {
+      var ctx = window.__bwCtx || {};
+      fetch('https://srdtobhozcsupwyfxvxv.supabase.co/functions/v1/meta-capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_name: 'PageView',
+          event_id: window.__bwPageViewId,
+          event_source_url: window.location.href,
+          angle: ctx.angle,
+          utm_source: ctx.utm_source,
+          utm_medium: ctx.utm_medium,
+          utm_campaign: ctx.utm_campaign,
+          utm_content: ctx.utm_content,
+          is_test: ctx.is_test
+        }),
+        keepalive: true
+      }).catch(function() {});
+    })();
     </script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
