@@ -9,6 +9,21 @@
     <meta name="author" content="BackWatcher">
     <!--     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  -->
+    <!-- Landing variant: ?angle=pain or ?angle=image (default = image) -->
+    <script>
+    (function() {
+      try {
+        var params = new URLSearchParams(location.search);
+        var angle = params.get('angle');
+        if (angle === 'pain') document.documentElement.setAttribute('data-angle', 'pain');
+        else document.documentElement.setAttribute('data-angle', 'image');
+      } catch(e) { document.documentElement.setAttribute('data-angle', 'image'); }
+    })();
+    </script>
+    <style>
+      html[data-angle="pain"] .v-image { display: none !important; }
+      html[data-angle="image"] .v-pain { display: none !important; }
+    </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5YPR2LR29"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -111,14 +126,20 @@ gtag('config', 'G-L5YPR2LR29');
     <div class="banner" data-aos="fade-up">
         <div class="BannerText">
             <br><br>
-            <span>
+            <span class="v-image">
                 <h1>Posture is how the room sees you.</h1>
+            </span>
+            <span class="v-pain">
+                <h1>Stop the desk pain before it stops you.</h1>
             </span>
             <br>
             <br>
             <br>
-            <span class="ValueProposition">
+            <span class="ValueProposition v-image">
                 <h2>BackWatcher catches the slouch the second it starts — so the posture you build at your desk becomes the posture you carry into meetings, photos, and every room you walk into.</h2>
+            </span>
+            <span class="ValueProposition v-pain">
+                <h2>BackWatcher catches the slouch the second it starts — before forward neck and rolled shoulders turn into morning stiffness, evening tension, and chronic pain.</h2>
             </span>
             <br>
         
